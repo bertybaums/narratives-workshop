@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1b300" />
+    <title>Narratives Workshop Slides</title>
+    <meta
+      name="description"
+      content="Interactive slides for the workshop Narratives that have, and will, shape both us and the machines. University of Idaho AI Symposium, October 29, 2026."
+    />
+    <link rel="stylesheet" href="reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal/dist/theme/white.css" />
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body class="slides-page">
+    <div class="slides-home"><a href="index.html">Workshop page</a></div>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ═══════════════ OPENING (Bert) ═══════════════ -->
+
+        <!-- 1. TITLE -->
+        <section class="title-slide" data-background-color="#f1b300">
+          <p class="slide-kicker">University of Idaho AI Symposium 2026 &middot; Track 4: AI Ethics and Future</p>
+          <h1>Narratives that have, and will, shape both us and the machines</h1>
+          <p class="slide-lede">A workshop with the NARC lab</p>
+          <div class="presenter-row">
+            <span class="presenter-chip">Bert Baumgaertner <span>Politics and Philosophy</span></span>
+            <span class="presenter-chip">Hadley Huzefka</span>
+            <span class="presenter-chip">Jason Culbertson</span>
+            <span class="presenter-chip">Chloe Luo</span>
+          </div>
+          <p class="slide-micro" style="color:var(--ink) !important; margin-top:1rem;">Thursday, October 29, 2026</p>
+          <aside class="notes">
+            Welcome. I'm Bert Baumgaertner. I teach philosophy here, in Politics and Philosophy.
+            With me are Hadley, Jason and Chloe from the NARC lab. They make puzzles, and you'll meet their puzzles in about fifteen minutes.
+            This is a workshop, so you'll do things. If you have a laptop or a phone, get it out. If you don't, pair up with someone who does.
+          </aside>
+        </section>
+
+        <!-- 2. GET SET UP -->
+        <section>
+          <p class="slide-kicker">Before we start</p>
+          <h2>Follow along on your own screen</h2>
+          <div class="qr-row">
+            <div class="qr-card">
+              <img src="img/qr-deck.svg" alt="QR code for this slide deck" />
+              <h3>These slides</h3>
+              <p><a data-config="deckUrl" href="#">bertybaums.github.io/narratives-workshop</a></p>
+            </div>
+            <div class="qr-card">
+              <img src="img/qr-narc.svg" alt="QR code for the NARC puzzle site" />
+              <h3>The puzzles</h3>
+              <p><a data-config="narcUrl" href="#">narc.insight.uidaho.edu</a></p>
+            </div>
+          </div>
+          <p class="slide-note">A laptop works best. Pairs are fine. A plain-text companion with everything in the slides is linked from the workshop page.</p>
+          <aside class="notes">
+            Two links. The first is these slides. Everything I show is live, so you can click along. The second is the puzzle site. You'll need it in about forty minutes.
+            If a screen reader or a printout works better for you, there's a plain-text companion with the same content, linked from the workshop page.
+          </aside>
+        </section>
+
+        <!-- 3. PLAN -->
+        <section>
+          <p class="slide-kicker">The next 75 minutes</p>
+          <h2>The plan</h2>
+          <div class="plan" role="list">
+            <div class="plan-step" role="listitem"><span class="plan-num">1</span><p>Stories we reason with</p><span class="plan-who">Bert</span><span class="plan-time">5 min</span></div>
+            <div class="plan-step" role="listitem"><span class="plan-num">2</span><p>How a NARC puzzle works, and how the models did</p><span class="plan-who">Bert</span><span class="plan-time">5 min</span></div>
+            <div class="plan-step" role="listitem"><span class="plan-num">3</span><p>Three puzzles from the lab</p><span class="plan-who">Hadley, Jason, Chloe</span><span class="plan-time">21 min</span></div>
+            <div class="plan-step" role="listitem"><span class="plan-num">4</span><p>Your turn: write a story, test it on MindRouter</p><span class="plan-who">Everyone</span><span class="plan-time">20 min</span></div>
+            <div class="plan-step" role="listitem"><span class="plan-num">5</span><p>Stories about AI that leave us room to choose</p><span class="plan-who">Discussion</span><span class="plan-time">19 min</span></div>
+          </div>
+          <aside class="notes">
+            Five parts. First, a few minutes on how we reason with stories. Then I'll show you how our puzzles work and how to read our results tables, and Hadley, Jason and Chloe will each walk you through one they made.
+            Then it's your turn. You'll write your own story for a puzzle and test it against an AI model that runs here on campus, on MindRouter.
+            We'll finish with the biggest part, a discussion about the stories we tell about AI itself: which ones leave us room to choose where it goes in our work, and where it doesn't.
+            Lunch is at 1:00 in the ballroom, and we'll end on time.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ PART 1 · STORIES WE REASON WITH (Bert, 5 min) ═══════════════ -->
+
+        <!-- 1.0 DIVIDER -->
+        <section class="part-divider" data-background-color="#191919">
+          <p class="slide-kicker">Part 1 &middot; Stories we reason with</p>
+          <h2>We reason with narratives, analogies and metaphors</h2>
+          <p class="slide-lede">For short, NAMs.</p>
+          <aside class="notes">
+            We reason with narratives, analogies and metaphors all the time. In daily life, in teaching, in research. I'll call them NAMs for short, because I'll mention them a lot.
+          </aside>
+        </section>
+
+        <!-- 1.1 NAMS EVERYWHERE -->
+        <section>
+          <p class="slide-kicker">Part 1 &middot; NAMs are everywhere</p>
+          <h2>What does each one let you predict?</h2>
+          <div class="flip-grid">
+            <p class="flip-col-label">Daily life</p>
+            <p class="flip-col-label">Teaching</p>
+            <p class="flip-col-label">Research</p>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Metaphor</span><p>&ldquo;Traffic is flowing.&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> a jam spreads backward, like a wave in a pipe.</p><p><strong>Breaks:</strong> drivers choose; water doesn&rsquo;t.</p></span>
+              </span>
+            </button>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Analogy</span><p>&ldquo;An atom is a tiny solar system.&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> electrons circle the nucleus like planets.</p><p><strong>Breaks:</strong> electrons don&rsquo;t follow orbits, so it fails for chemistry.</p></span>
+              </span>
+            </button>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Analogy</span><p>&ldquo;Natural selection&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> like a breeder&rsquo;s choices, helpful traits spread over generations.</p><p><strong>Breaks:</strong> no one is doing the selecting.</p></span>
+              </span>
+            </button>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Metaphor</span><p>&ldquo;My phone is dying.&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> it needs charging soon, or it stops.</p><p><strong>Breaks:</strong> a dead phone comes back once you plug it in.</p></span>
+              </span>
+            </button>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Metaphor</span><p>&ldquo;Memory is a filing cabinet.&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> memories are stored, then pulled out intact.</p><p><strong>Breaks:</strong> remembering rebuilds a memory, and can change it.</p></span>
+              </span>
+            </button>
+            <button class="flip-card" type="button">
+              <span class="flip-card-inner">
+                <span class="flip-card-front"><span class="flip-tag">Metaphor</span><p>&ldquo;DNA is a blueprint.&rdquo;</p></span>
+                <span class="flip-card-back"><p><strong>Predicts:</strong> the genes spell out the finished body.</p><p><strong>Breaks:</strong> development depends on the environment too.</p></span>
+              </span>
+            </button>
+          </div>
+          <p class="slide-note flip-hint">Click a card to flip it.</p>
+          <aside class="notes">
+            Six NAMs, two each from daily life, teaching and research. Before I flip one, think about what it lets you predict.
+            [flip traffic] "Traffic is flowing." If traffic is a fluid, a jam should travel backward, like a wave. And it does. That's a good prediction from a metaphor. But drivers make choices and water doesn't.
+            [flip atom] The solar-system atom. Every one of us learned it. It predicts orbits. It fails as soon as you need chemistry.
+            [flip selection] Darwin built natural selection on an analogy with breeders choosing which animals to breed. The analogy carries the prediction: helpful traits spread. Where it breaks matters too. No one is doing the choosing. Remember that one. Hadley's puzzle comes back to it.
+            Leave the other three for people to flip on their own screens. The point is the same for each. A NAM lets you predict what comes next. And every NAM breaks somewhere.
+          </aside>
+        </section>
+
+        <!-- 1.2 SAME FACTS, DIFFERENT STORIES -->
+        <section>
+          <p class="slide-kicker">Part 1 &middot; A story picks what comes next</p>
+          <h2>A colleague hasn&rsquo;t answered your email in a week</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" type="button" data-panel="busy" aria-pressed="true">&ldquo;She&rsquo;s swamped.&rdquo;</button>
+              <button class="toggle-btn" type="button" data-panel="upset" aria-pressed="false">&ldquo;She&rsquo;s annoyed with me.&rdquo;</button>
+              <button class="toggle-btn" type="button" data-panel="spam" aria-pressed="false">&ldquo;It went to spam.&rdquo;</button>
+            </div>
+            <div class="toggle-panel active" data-panel="busy">
+              <div class="slide-grid">
+                <article class="slide-card"><h3>What you expect next</h3><p>A reply, eventually.</p></article>
+                <article class="slide-card accent"><h3>What you do</h3><p>Wait. Maybe a gentle nudge.</p></article>
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="upset">
+              <div class="slide-grid">
+                <article class="slide-card"><h3>What you expect next</h3><p>Silence, or a cool reply.</p></article>
+                <article class="slide-card accent"><h3>What you do</h3><p>Apologize. Walk over to her office.</p></article>
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="spam">
+              <div class="slide-grid">
+                <article class="slide-card"><h3>What you expect next</h3><p>Nothing, until you fix it.</p></article>
+                <article class="slide-card accent"><h3>What you do</h3><p>Resend from another account.</p></article>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">Same facts. A different story picks a different next step. We built puzzles to study this, in people and in AI models.</p>
+          <aside class="notes">
+            Here's an everyday case. A colleague hasn't answered your email in a week. Those are the facts.
+            [click each] If she's swamped, you wait. If she's annoyed with you, you apologize. If it went to spam, you resend.
+            The facts don't tell you what comes next. The story you tell about them does. And you act on the story.
+            We built a set of puzzles to study exactly this, in people and in AI models.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ PART 2 · NARC PUZZLES (Bert, 7 min) ═══════════════ -->
+
+        <!-- 2.0 DIVIDER -->
+        <section class="part-divider" data-background-color="#191919">
+          <p class="slide-kicker">Part 2 &middot; NARC puzzles</p>
+          <h2>Can a story fill in what the pictures leave open?</h2>
+          <p class="slide-lede">Narrative Augmented Reasoning Challenges</p>
+          <aside class="notes">
+            NARC stands for Narrative Augmented Reasoning Challenges. My lab has been building these puzzles since March. I won't explain them first. Let's just do one.
+          </aside>
+        </section>
+
+        <!-- 2.1 CHAT -->
+        <section>
+          <p class="slide-kicker">Part 2 &middot; Try one</p>
+          <h2>Chat: what goes in grid 4?</h2>
+          <div class="narc-seq" style="--cell:44px;">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[0,0,7],[5,0,7]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel">
+              <div class="narc-slot">
+                <div class="guess-pad" id="pad-chat" data-rows="3" data-cols="3" data-answer="[[5,0,7],[5,0,7],[5,0,7]]"></div>
+                <div class="narc-grid narc-answer fragment" data-fragment-index="2" data-grid="[[5,0,7],[5,0,7],[5,0,7]]" aria-label="Answer"></div>
+              </div>
+              <figcaption class="narc-panel-label">Grid 4</figcaption>
+            </figure>
+          </div>
+          <div class="guess-tools" data-pad="pad-chat" data-palette="0,5,7" data-copy="[[5,0,0],[5,0,7],[5,0,7]]" data-copy-label="Start from grid 3"></div>
+          <p class="narc-story fragment" data-fragment-index="1"><span class="narc-story-label">The story</span>Ally and Bob met to chat. Ally became sad. After some encouraging words from Bob, Ally became happy. This made Bob happy too.</p>
+          <aside class="notes">
+            Two bars, a grey one and an orange one. What goes in grid 4? Shout out a guess. I'll paint it in. [paint the room's guess, press Check]
+            Most people say the grey bar keeps changing, or that both go back to where they started. The grids alone don't settle it.
+            [click] The story. Grey is Ally, orange is Bob, and the height of a bar is mood. Ally drops when she's sad and comes back higher when she's happy.
+            [click] "This made Bob happy too." So Bob rises to full height.
+          </aside>
+        </section>
+
+        <!-- 2.2 HOW IT WORKS -->
+        <section>
+          <p class="slide-kicker">Part 2 &middot; How a NARC puzzle works</p>
+          <h2>Pictures, a story, and an exact answer</h2>
+          <div class="slide-grid three">
+            <article class="slide-card"><h3>1. A strip of small grids</h3><p>Three to eight frames that show something happening. One frame is hidden.</p></article>
+            <article class="slide-card"><h3>2. A short story</h3><p>It doesn&rsquo;t describe the grids. It helps only if you read it as being about the shapes.</p></article>
+            <article class="slide-card"><h3>3. Rebuild the hidden grid</h3><p>Exactly, every cell the right color. Close doesn&rsquo;t count.</p></article>
+          </div>
+          <p class="slide-note">About 320 public puzzles at narc.insight.uidaho.edu. Anyone can solve them, and anyone can make one.</p>
+          <aside class="notes">
+            Here's the general shape. A short strip of small colored grids that show something happening. One frame is hidden.
+            A short story that doesn't describe the grids. It only helps if you read it as being about the shapes. That's the metaphor step: a bar is a person, height is mood.
+            You have to rebuild the hidden grid exactly. Every cell.
+            There are about 320 public puzzles on the site. People in the lab made most of them, and visitors can submit their own. We also give every puzzle to AI models. Here's how they did on Chat.
+          </aside>
+        </section>
+
+        <!-- 2.3 HOW THE MODELS DID (Bert explains the table once, so the students don't have to) -->
+        <section>
+          <p class="slide-kicker">Part 2 &middot; How the models did</p>
+          <h2>Chat: how to read a results table</h2>
+          <div class="results-layout explain">
+            <ol class="read-steps">
+              <li class="fragment" data-hl="rows"><span class="step-key">1</span><p>Each row is one AI model.</p></li>
+              <li class="fragment" data-hl="tests"><span class="step-key">2</span><p>Three tests: the grids only, the story only, and both.</p></li>
+              <li class="fragment" data-hl="follow"><span class="step-key">3</span><p>Two follow-ups for models that solved it: shuffle the grids, or swap the story for its key words.</p></li>
+              <li class="fragment" data-hl="narrate"><span class="step-key">4</span><p>Highlighted: the model you&rsquo;ll write for in Part 4.</p></li>
+            </ol>
+            <div class="results" data-puzzle="chat"></div>
+          </div>
+          <p class="slide-callout fragment">The NARC property: a model needs <em>both</em>. For Chat, 0 of 11 from the grids, 0 of 11 from the story, 5 of 11 with both.</p>
+          <aside class="notes">
+            Hadley, Jason and Chloe will each show a table like this, so let me walk through one now.
+            [click] Each row is one AI model. More on what that means on the next slide.
+            [click] We test every model three ways. Grids only: the model sees the strip and has to fill in the hidden grid. Story only: it gets the story and is told how many grids there are and which one is hidden. Both: grids and story together. A check means it got every cell right.
+            [click] The last two columns are follow-ups, run three times each, only for models that solved it with both. "Shuffled grids" keeps the story and puts the frames in a random order. Here, no model solved Chat shuffled, so the order mattered. "Key words only" swaps the story for its key words in alphabetical order. For Chat that's: ally, became, bob, chat, encouraging, happy, made, met, sad, words. Three models solved Chat from that list once in three tries. Watch that column in the students' puzzles.
+            [click] The highlighted row is qwen3.8-27b. That's the model Narrate uses, so it's the one you'll be writing for later.
+            [click] No model got Chat from the grids alone or the story alone. Five of eleven got it with both. When a model needs both, we say the puzzle has the NARC property for that model. The story did work the pictures couldn't.
+            One caution. Each model gets one try per test, and when we rerun, about one verdict in six flips. So read across the rows, not any single result.
+          </aside>
+        </section>
+
+        <!-- 2.4 WHAT A MODEL IS, AND WHERE THEY RUN -->
+        <section>
+          <p class="slide-kicker">Part 2 &middot; What we mean by a model</p>
+          <h2>Most of these models run here, on campus</h2>
+          <div class="slide-grid">
+            <article class="slide-card"><h3>A model is one trained AI system</h3><p>Chatbots like ChatGPT and Claude are apps built on models. Each row in our tables is a different model.</p></article>
+            <article class="slide-card"><h3>Different makers, different sizes</h3><p>Google, OpenAI, Alibaba, Moonshot AI, NVIDIA. The number in a name is roughly its size: 120b means 120 billion parameters.</p></article>
+            <article class="slide-card"><h3>Most run on MindRouter</h3><p>The university&rsquo;s own AI service, on university-owned GPUs. Prompts and replies stay on university infrastructure. Claude Fable, the commercial one, we ran off campus for comparison.</p></article>
+            <article class="slide-card accent"><h3>Open to you</h3><p>Sign in with your university account. Chat in the browser, or get a key to use it from your own code. Narrate uses it too.</p></article>
+          </div>
+          <p class="slide-note"><a data-config="mindrouterUrl" href="#">mindrouter.uidaho.edu</a> &middot; Luke Sheneman&rsquo;s Vandal Chat session is at 2:30 today.</p>
+          <aside class="notes">
+            What do I mean by a model? A model is one trained AI system. ChatGPT and Claude are apps, and each runs on models. Each row in our tables is a different model.
+            They come from different makers: Google's gemma, OpenAI's gpt-oss, Alibaba's qwen, Moonshot's kimi, NVIDIA's nemotron. "Open weights" means the maker released the model itself, so anyone can run it on their own machines.
+            The number in a name is roughly its size, in billions of parameters. Parameters are the numbers a model learns in training. Bigger usually means more capable, but not on every puzzle, as you'll see.
+            Eleven of the twelve are open models, and we ran them on MindRouter. That's the university's own AI service. It runs on university-owned GPUs, so what you type stays on university infrastructure. That matters for student work and for research data. Two of the eleven were retired from MindRouter on October 1, which is why their rows say "retired." Claude Fable is a commercial model. It isn't on MindRouter, and we ran it separately for comparison.
+            You can use MindRouter yourself. Sign in with your university account. Luke Sheneman ran a session on it this morning, and his Vandal Chat session is at 2:30.
+            Now, three puzzles from the lab.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ PART 3 · THREE PUZZLES FROM THE LAB (students, 21 min) ═══════════════ -->
+
+        <!-- 3.0 DIVIDER -->
+        <section class="part-divider" data-background-color="#191919">
+          <p class="slide-kicker">Part 3 &middot; From the NARC lab</p>
+          <h2>Three puzzles, three makers</h2>
+          <div class="slide-grid three" style="max-width:52rem; margin:1rem auto 0;">
+            <article class="slide-card" style="background:#2a2a2a; border-color:#444;"><h3 style="color:var(--gold);">Hunt</h3><p style="color:#eee;">by Hadley</p></article>
+            <article class="slide-card" style="background:#2a2a2a; border-color:#444;"><h3 style="color:var(--gold);">The Accident</h3><p style="color:#eee;">by Jason</p></article>
+            <article class="slide-card" style="background:#2a2a2a; border-color:#444;"><h3 style="color:var(--gold);">Ballerina 4</h3><p style="color:#eee;">by Chloe</p></article>
+          </div>
+          <aside class="notes">
+            Now the students. Each of them made a puzzle, tested it against the models, and learned something from it. Hadley goes first.
+          </aside>
+        </section>
+
+        <!-- ─── HUNT (Hadley) ─── -->
+
+        <!-- 3.1 HUNT PUZZLE -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Hadley&rsquo;s puzzle</p>
+          <h2>Hunt: what goes in grid 4?</h2>
+          <div class="narc-seq" style="--cell:28px;">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,4,0,0,0],[0,0,0,4,0],[0,0,0,3,0],[4,3,0,0,4]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,0,0],[0,0,0,3,0],[0,3,0,0,4]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,0,0],[0,0,0,3,0],[0,3,0,0,2]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel">
+              <div class="narc-slot">
+                <div class="guess-pad" id="pad-hunt" data-rows="5" data-cols="5" data-answer="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,4,0],[0,0,0,3,0],[4,3,0,0,2]]"></div>
+                <div class="narc-grid narc-answer fragment" data-fragment-index="2" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,4,0],[0,0,0,3,0],[4,3,0,0,2]]" aria-label="Answer"></div>
+              </div>
+              <figcaption class="narc-panel-label">Grid 4</figcaption>
+            </figure>
+          </div>
+          <div class="guess-tools" data-pad="pad-hunt" data-palette="0,2,3,4" data-copy="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,0,0],[0,0,0,3,0],[0,3,0,0,2]]" data-copy-label="Start from grid 3"></div>
+          <p class="narc-story fragment" data-fragment-index="1"><span class="narc-story-label">Hadley&rsquo;s story</span>Treb likes to go hunting in his free time. In the marshy area behind his house, a flock of ducks likes to hang out. The green grass can sometimes make shooting the ducks difficult, as the ducks will hide behind them. Treb was lucky enough to snipe one duck. However, the shot startled the surrounding ducks, and the ones closest to the grass hid. Treb noticed one duck still sitting out. After getting two ducks, he collects his stuff and leaves. The remaining ducks emerge from the grass to discover only bloody puddles left of their friends.</p>
+          <aside class="notes">
+            [Hadley] Introduce yourself, and say what you study.
+            Ask the room: what goes in grid 4? Take a guess or two and paint one in. Press Check.
+            [click] Read your story, or ask someone in the room to read it.
+            [click] Show the answer. The two ducks that hid come back out, and the two red puddles stay.
+          </aside>
+        </section>
+
+        <!-- 3.2 HUNT: READING THE STORY -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Hadley&rsquo;s puzzle</p>
+          <h2>Two ways to tell the same hunt</h2>
+          <div class="slide-split" style="align-items:flex-start;">
+            <div style="flex:0 0 30%;">
+              <div class="slide-card">
+                <h3>Identifiers for humans</h3>
+                <div class="color-key">
+                  <div class="key-row"><span class="key-swatch" style="background:#FFDC00"></span><p>Ducks: yellow</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#2ECC40"></span><p>Grass: green</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#FF4136"></span><p>Blood: red</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#000"></span><p>Hiding: not visible</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#FFDC00; outline:2px dashed var(--gold-ink);"></span><p>Emerge: visible again</p></div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;">
+              <div class="toggle-compare" style="margin-top:0;">
+                <div class="toggle-header" style="justify-content:flex-start;">
+                  <button class="toggle-btn active" type="button" data-panel="simple" aria-pressed="true">Simplified story</button>
+                  <button class="toggle-btn" type="button" data-panel="full" aria-pressed="false">Hadley&rsquo;s story</button>
+                </div>
+                <div class="toggle-panel active" data-panel="simple">
+                  <p class="narc-story" style="margin-top:0 !important;">The yellow ducks like to sit in the green grass. The hunter comes along and shoots two yellow ducks. The other two ducks hide behind the green grass. When the two yellow ducks emerge from behind the green grass, they see the red puddles left of their friends.</p>
+                </div>
+                <div class="toggle-panel" data-panel="full">
+                  <p class="narc-story" style="margin-top:0 !important;">Treb likes to go hunting in his free time. In the marshy area behind his house, a flock of ducks likes to hang out. The green grass can sometimes make shooting the ducks difficult, as the ducks will hide behind them. Treb was lucky enough to snipe one duck. However, the shot startled the surrounding ducks, and the ones closest to the grass hid. Treb noticed one duck still sitting out. After getting two ducks, he collects his stuff and leaves. The remaining ducks emerge from the grass to discover only bloody puddles left of their friends.</p>
+                </div>
+              </div>
+              <p class="slide-note" style="text-align:left !important; margin-left:0 !important;">Same events, same answer. One version names the colors; the other leaves the reader to work them out.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            [Hadley] Walk through the key: ducks are yellow, grass is green, blood is red. Hiding means the duck isn't visible. Emerging means it's visible again.
+            Then toggle between the two stories. The simplified story names the colors. Your story doesn't, so the reader has to make the connection.
+            Say which one you think is better for a person, and which one you'd expect to work better for a model.
+          </aside>
+        </section>
+
+        <!-- 3.3 HUNT: MODELS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Hadley&rsquo;s puzzle</p>
+          <h2>Hunt: how the models did</h2>
+          <div class="results-layout">
+            <div class="result-stack">
+              <div class="result-chip"><strong>0 of 12</strong><span>grids only</span></div>
+            <div class="result-chip"><strong>0 of 12</strong><span>story only</span></div>
+            <div class="result-chip win"><strong>8 of 12</strong><span>grids + story</span></div>
+              <p class="result-note">Highlighted: the model Narrate uses. Tags mark the commercial model and two retired from MindRouter on October 1.</p>
+            </div>
+            <div class="results" data-puzzle="hunt"></div>
+          </div>
+          <aside class="notes">
+            [Hadley] Bert already explained how to read this table, so just say what stands out.
+            No model solved it from the grids alone or the story alone. Eight of twelve solved it with both.
+            Shuffled grids: four of the models that solved it never solved it shuffled, so for them the order mattered.
+            Key words only: none of them solved it from the key words. The story itself mattered, not just the words in it.
+          </aside>
+        </section>
+
+        <!-- 3.4 HUNT: LESSONS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Hadley&rsquo;s puzzle</p>
+          <h2>What Hadley learned</h2>
+          <div class="slide-grid">
+            <article class="slide-card"><h3>The hunter is never in the picture</h3><p>Treb never appears in the grids, but he decides which ducks are there. An agent can be present in the story and absent from the scene.</p></article>
+            <article class="slide-card"><h3>Guess, then intuitive, then obvious</h3><p>Without the story you guess. With it, the answer feels obvious.</p></article>
+            <article class="slide-card"><h3>Simple and complex stories both matter</h3><p>The same solution can be told in ways that look very different.</p></article>
+            <article class="slide-card accent"><h3>One problem, many perspectives</h3><p>Different readers, one right answer. Next: one problem, many stories. That&rsquo;s Narrate.</p></article>
+          </div>
+          <aside class="notes">
+            [Hadley] These are your takeaways from your slides. Put them in your own words.
+            The first one comes back at the end, when we ask who acts in the stories we tell about AI.
+            The last one sets up Part 4, where everyone writes their own story.
+          </aside>
+        </section>
+
+        <!-- ─── THE ACCIDENT (Jason) ─── -->
+
+        <!-- 3.5 ACCIDENT PUZZLE -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Jason&rsquo;s puzzle</p>
+          <h2>The Accident: what goes in grid 4?</h2>
+          <div class="narc-seq" style="--cell:24px;">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,8,8,8,4,4],[8,8,8,8,4,4],[8,8,8,8,8,8],[8,8,8,8,8,8],[8,2,8,8,8,8],[0,0,0,0,0,0]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[5,5,0,0,0,0],[5,5,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,2,0,0,0,0],[0,0,0,0,0,0]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,5,5,0,0],[0,0,5,5,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,2,0,3,0,0],[0,0,0,0,0,0]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel">
+              <div class="narc-slot">
+                <div class="guess-pad" id="pad-accident" data-rows="6" data-cols="6" data-answer="[[0,0,0,0,5,5],[0,0,0,0,5,5],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,2,0,0],[0,0,0,0,0,0]]"></div>
+                <div class="narc-grid narc-answer fragment" data-fragment-index="2" data-grid="[[0,0,0,0,5,5],[0,0,0,0,5,5],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,2,0,0],[0,0,0,0,0,0]]" aria-label="Answer"></div>
+              </div>
+              <figcaption class="narc-panel-label">Grid 4</figcaption>
+            </figure>
+          </div>
+          <div class="guess-tools" data-pad="pad-accident" data-palette="0,2,3,5" data-copy="[[0,0,5,5,0,0],[0,0,5,5,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,2,0,3,0,0],[0,0,0,0,0,0]]" data-copy-label="Start from grid 3"></div>
+          <p class="narc-story fragment" data-fragment-index="1"><span class="narc-story-label">Jason&rsquo;s story</span>A car stalls out on an empty highway in the middle of the desert. The driver has no cellphone service. All they can do is wait and hope that someone passes by to help. In the middle of the night, a giant tortoise approaches the vehicle. For hours, it sits and stares, wondering about the strange, still beast before it. Suddenly, the driver, who has fallen asleep at this point, feels a jolt as the car loses traction and crushes the curious tortoise.</p>
+          <aside class="notes">
+            [Jason] Introduce yourself, and say what you study.
+            Ask the room what goes in grid 4, and paint in a guess.
+            [click] Read the story.
+            [click] Show the answer. The moon keeps moving across the sky, and the car rolls forward onto the tortoise. The green square is gone.
+          </aside>
+        </section>
+
+        <!-- 3.6 ACCIDENT: READING THE STORY -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Jason&rsquo;s puzzle</p>
+          <h2>Two ways to tell the same accident</h2>
+          <div class="slide-split" style="align-items:flex-start;">
+            <div style="flex:0 0 30%;">
+              <div class="slide-card">
+                <h3>Identifiers for humans</h3>
+                <div class="color-key">
+                  <div class="key-row"><span class="key-swatch" style="background:#FFDC00"></span><p>Sun: yellow</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:linear-gradient(90deg,#7FDBFF 50%,#000 50%)"></span><p>Sky: blue, then black</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#FF4136"></span><p>Car: red</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#2ECC40"></span><p>Tortoise: green</p></div>
+                  <div class="key-row"><span class="key-swatch" style="background:#AAAAAA"></span><p>Moon: gray</p></div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;">
+              <div class="toggle-compare" style="margin-top:0;">
+                <div class="toggle-header" style="justify-content:flex-start;">
+                  <button class="toggle-btn active" type="button" data-panel="simple" aria-pressed="true">Simplified story</button>
+                  <button class="toggle-btn" type="button" data-panel="full" aria-pressed="false">Jason&rsquo;s story</button>
+                </div>
+                <div class="toggle-panel active" data-panel="simple">
+                  <p class="narc-story" style="margin-top:0 !important;">A red car stalls out on an empty highway. In the middle of the night, a giant green tortoise approaches the red vehicle. The driver, who has fallen asleep at this point, feels a jolt as the car loses traction and crushes the curious tortoise.</p>
+                </div>
+                <div class="toggle-panel" data-panel="full">
+                  <p class="narc-story" style="margin-top:0 !important;">A car stalls out on an empty highway in the middle of the desert. The driver has no cellphone service. All they can do is wait and hope that someone passes by to help. In the middle of the night, a giant tortoise approaches the vehicle. For hours, it sits and stares, wondering about the strange, still beast before it. Suddenly, the driver, who has fallen asleep at this point, feels a jolt as the car loses traction and crushes the curious tortoise.</p>
+                </div>
+              </div>
+              <p class="slide-note" style="text-align:left !important; margin-left:0 !important;">Neither version mentions the sun or the moon. The reader supplies them: night falls, and something moves across the sky, one step per frame.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            [Jason] Walk through the key: the sun is yellow, the sky goes from blue to black when night falls, the car is red, the tortoise is green, and the moon is gray.
+            Then toggle between the two stories. The simplified one names the colors. Yours doesn't.
+            One thing worth saying: neither story mentions the sun or the moon. "In the middle of the night" plus a gray square moving across the top is enough for a person. A model has to make that same leap.
+          </aside>
+        </section>
+
+        <!-- 3.7 ACCIDENT: MODELS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Jason&rsquo;s puzzle</p>
+          <h2>The Accident: how the models did</h2>
+          <div class="results-layout">
+            <div class="result-stack">
+              <div class="result-chip"><strong>0 of 12</strong><span>grids only</span></div>
+            <div class="result-chip"><strong>0 of 12</strong><span>story only</span></div>
+            <div class="result-chip win"><strong>4 of 12</strong><span>grids + story</span></div>
+              <p class="result-note">Highlighted: the model Narrate uses. Tags mark the commercial model and two retired from MindRouter on October 1.</p>
+            </div>
+            <div class="results" data-puzzle="accident"></div>
+          </div>
+          <aside class="notes">
+            [Jason] Bert already explained the table, so just say what stands out.
+            Harder for the models than Hunt. Four of twelve solved it with the story, none without.
+            Every model that solved it failed all three shuffled orders and all three key-word lists. So these four needed the story, told in order.
+            Notice the highlighted row, qwen3.8-27b. That's the model Narrate uses, and it did not solve this one. Keep that in mind for Part 4.
+          </aside>
+        </section>
+
+        <!-- 3.8 ACCIDENT: LESSONS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Jason&rsquo;s puzzle</p>
+          <h2>What Jason learned</h2>
+          <p class="draft-flag">Numbers changed to match the live table: Jason to confirm</p>
+          <div class="slide-grid">
+            <article class="slide-card"><h3>Easy for us still tells us a lot</h3><p>A puzzle that&rsquo;s easy for people can still tell us a lot about AI.</p></article>
+            <article class="slide-card"><h3>A few simple pieces</h3><p>The Accident only takes the car, the tortoise and the event.</p></article>
+            <article class="slide-card"><h3>The story did the work</h3><p>With the story, 4 of 12 models solved it. Without it, none did.</p></article>
+            <article class="slide-card accent"><h3>Anyone can play, make or judge</h3><p>And learn how AI thinks while they do it. The puzzles invite teaching, learning and work across fields.</p></article>
+          </div>
+          <p class="slide-callout">A bigger question: how does AI use stories to abstract and reason?</p>
+          <aside class="notes">
+            [Jason] These are your takeaways from your slides. Put them in your own words.
+            On the third card: your Google slide said 4 of 10 models with the story and 1 without. The live table today says 4 of 12 with both, and 0 of 12 from the grids alone or the story alone, so the slide uses those. Tell Bert if you meant a different count.
+            The last card is the one to say slowly. AI is becoming an important technology that not many people feel they understand, and these puzzles are one way in that doesn't need any background.
+            End on the bigger question: how AI uses stories to abstract and reason.
+          </aside>
+        </section>
+
+        <!-- ─── BALLERINA 4 (Chloe) ─── -->
+
+        <!-- 3.9 BALLERINA PUZZLE -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Chloe&rsquo;s puzzle</p>
+          <h2>Ballerina 4: what goes in grid 4?</h2>
+          <div class="narc-seq" style="--cell:24px; gap:0.8rem;">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,0,0,0,8],[0,8,0,8,0],[0,0,8,0,0],[0,0,0,0,0],[2,0,0,0,0]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,8,0,0],[0,8,0,8,0],[8,0,0,0,8],[0,0,0,0,0],[2,0,0,0,0]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,0,0,0,8],[0,0,0,0,0],[8,0,0,0,8],[0,2,8,0,0],[0,0,0,0,0]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel">
+              <div class="narc-slot">
+                <div class="guess-pad" id="pad-ballerina" data-rows="5" data-cols="5" data-answer="[[0,0,0,0,0],[0,0,0,0,0],[0,0,2,0,0],[0,0,0,0,0],[8,8,8,8,8]]"></div>
+                <div class="narc-grid narc-answer fragment" data-fragment-index="2" data-grid="[[0,0,0,0,0],[0,0,0,0,0],[0,0,2,0,0],[0,0,0,0,0],[8,8,8,8,8]]" aria-label="Answer"></div>
+              </div>
+              <figcaption class="narc-panel-label">Grid 4</figcaption>
+            </figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,8,8,8,8],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]" aria-label="Grid 5"></div><figcaption class="narc-panel-label">Grid 5</figcaption></figure>
+          </div>
+          <div class="guess-tools" data-pad="pad-ballerina" data-palette="0,2,8"></div>
+          <p class="narc-story fragment" data-fragment-index="1"><span class="narc-story-label">Chloe&rsquo;s story</span>A ballerina collaborated with a street dance crew for a performance. The street dance crew took the stage first, constantly changing formations and movements in sync with the music. The ballerina waited at the back of the stage for her entrance. As the music gradually slowed down, she began to join the performance. When the performance reached its climax, only the ballerina performed at the center of the stage while all the street dance crew members paused at the back of the stage. At the end of the show, the ballerina fully exited, and the street dance crew finished the performance at the very front of the stage in an unchanged formation.</p>
+          <aside class="notes">
+            [Chloe] Introduce yourself, and say what you study.
+            This one hides a grid in the middle, so you can see what comes after it. Ask the room what goes in grid 4, and paint in a guess.
+            [click] Read the story.
+            [click] Show the answer: the ballerina alone at center stage, and the whole crew lined up at the back.
+          </aside>
+        </section>
+
+        <!-- 3.10 BALLERINA: READING -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Chloe&rsquo;s puzzle</p>
+          <h2>Reading Ballerina 4</h2>
+          <p class="draft-flag">Draft key: Chloe to confirm</p>
+          <div class="slide-split" style="justify-content:center; gap:2.4rem;">
+            <div class="slide-card" style="flex:0 0 22rem;">
+              <div class="color-key">
+                <div class="key-row"><span class="key-swatch" style="background:#FF4136"></span><p>Red: the ballerina</p></div>
+                <div class="key-row"><span class="key-swatch" style="background:#7FDBFF"></span><p>Light blue: the street dance crew</p></div>
+                <div class="key-row"><span class="key-swatch" style="background:#fff; border-top:6px solid #191919;"></span><p>Top row: front of the stage</p></div>
+                <div class="key-row"><span class="key-swatch" style="background:#fff; border-bottom:6px solid #191919;"></span><p>Bottom row: back of the stage</p></div>
+              </div>
+            </div>
+            <div style="flex:0 0 22rem;">
+              <p class="slide-callout" style="margin-top:0 !important;">To solve it you need both: the story, and tracking where every dancer stands from one frame to the next.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            [Chloe] Walk through the key. Check that this is how you meant it.
+            The stage is seen from above, with the audience at the top. So the back of the stage is the bottom row.
+            Solving it takes both understanding the story and keeping track of positions and formations from grid to grid.
+          </aside>
+        </section>
+
+        <!-- 3.11 BALLERINA: MODELS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Chloe&rsquo;s puzzle</p>
+          <h2>Ballerina 4: how the models did</h2>
+          <div class="results-layout">
+            <div class="result-stack">
+              <div class="result-chip"><strong>0 of 12</strong><span>grids only</span></div>
+            <div class="result-chip"><strong>0 of 12</strong><span>story only</span></div>
+            <div class="result-chip win"><strong>8 of 12</strong><span>grids + story</span></div>
+              <p class="result-note">Highlighted: the model Narrate uses. Tags mark the commercial model and two retired from MindRouter on October 1.</p>
+            </div>
+            <div class="results" data-puzzle="ballerina"></div>
+          </div>
+          <aside class="notes">
+            [Chloe] Bert already explained the table, so just say what stands out.
+            Eight of twelve with the story, none without.
+            Look at the shuffled column. Here, most models could still solve it some of the time when the grids were shuffled. qwen3.8-27b solved it all three times. So for this puzzle, the order of the grids mattered less than for Hunt or The Accident. The key-word lists never worked.
+            Different models perform differently. That's your next slide.
+          </aside>
+        </section>
+
+        <!-- 3.12 BALLERINA: LESSONS -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Chloe&rsquo;s puzzle</p>
+          <h2>What Chloe learned</h2>
+          <div class="slide-grid">
+            <article class="slide-card"><h3>Two skills at once</h3><p>Models have to understand the story and track positions and formations across the grids.</p></article>
+            <article class="slide-card"><h3>Different models, different results</h3><p>The same puzzle split the twelve models eight to four.</p></article>
+            <article class="slide-card"><h3>Small changes matter</h3><p>Hiding grids 4 and 5 together, instead of grid 4 alone, changed how the models did.</p></article>
+            <article class="slide-card accent"><h3>Variations are a probe</h3><p>Small variations can show a model&rsquo;s strengths and weaknesses.</p></article>
+          </div>
+          <aside class="notes">
+            [Chloe] These are your takeaways from your slides. Put them in your own words.
+            On "small changes matter": the lab's first version of this puzzle, called Ballerina, hid grids 4 and 5 together. Five of twelve models solved that one. But its story was worded differently too, so it's not a clean comparison. Say which comparison you mean, or show your mask-variant results if you have them.
+          </aside>
+        </section>
+
+        <!-- 3.13 WHAT THE THREE SHOW (Bert) -->
+        <section>
+          <p class="slide-kicker">Part 3 &middot; Putting them together</p>
+          <h2>What the three puzzles show</h2>
+          <table class="sum-table">
+            <thead>
+              <tr><th scope="col">Puzzle</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Key words only</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Hunt</th><td>0 of 12</td><td>0 of 12</td><td class="big">8 of 12</td><td>0 of 7 models</td></tr>
+              <tr><th scope="row">The Accident</th><td>0 of 12</td><td>0 of 12</td><td class="big">4 of 12</td><td>0 of 3 models</td></tr>
+              <tr><th scope="row">Ballerina 4</th><td>0 of 12</td><td>0 of 12</td><td class="big">8 of 12</td><td>0 of 7 models</td></tr>
+            </tbody>
+          </table>
+          <p class="slide-callout">The pictures alone leave the answer open. A short story settles it. And it has to be a story: a list of its key words never worked.</p>
+          <p class="slide-note">&ldquo;Key words only&rdquo; counts the models that solved it with the story, minus Claude Fable, which wasn&rsquo;t tested. Each got three tries. Results as of October 21, 2026.</p>
+          <aside class="notes">
+            Thank you, Hadley, Jason and Chloe.
+            Put the three side by side. No model solved any of them from the grids alone or the story alone. With both, eight, four and eight of twelve.
+            And when we swap the story for a list of its key words, none of the models that had solved it could solve it again. Not once in three tries. Compare Chat, where three models got there from the key words alone, once in three tries. For the students' puzzles, the words weren't enough. It took the story.
+            The same caution as before: one try per model per test, so look at the pattern across models, not any single result.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ PART 4 · YOUR TURN (20 min) ═══════════════ -->
+
+        <!-- 4.0 DIVIDER -->
+        <section class="part-divider" data-background-color="#191919">
+          <p class="slide-kicker">Part 4 &middot; Narrate</p>
+          <h2>Same facts, different stories</h2>
+          <p class="slide-lede">You know what happened. Can you tell it so the model gets it right?</p>
+          <aside class="notes">
+            So far the stories were given. Now you write them. And you get to see the answer. The model doesn't.
+          </aside>
+        </section>
+
+        <!-- 4.1 HOW NARRATE WORKS -->
+        <section>
+          <p class="slide-kicker">Part 4 &middot; How Narrate works</p>
+          <h2>You see the answer. The model doesn&rsquo;t.</h2>
+          <div class="narc-seq" style="--cell:22px;">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[0,0,7],[5,0,7]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid narc-hidden-from-model" data-grid="[[5,0,7],[5,0,7],[5,0,7]]" aria-label="Grid 4, hidden from the model"></div><figcaption class="narc-panel-label">Hidden from the model</figcaption></figure>
+          </div>
+          <div class="steps" style="max-width:44rem; margin:0.9rem auto 0; text-align:left;">
+            <div class="step"><span class="step-key">1</span><p>You see every grid, including the one the model won&rsquo;t see.</p></div>
+            <div class="step"><span class="step-key">2</span><p>You write a story about what happens. Don&rsquo;t spell out cells, numbers or coordinates.</p></div>
+            <div class="step"><span class="step-key">3</span><p>The model gets the other grids and your story, and has to rebuild the hidden one exactly. It&rsquo;s <strong>qwen3.8-27b</strong>, on MindRouter.</p></div>
+            <div class="step final"><span class="step-key">4</span><p>You see whether it worked. Revise and try again.</p></div>
+          </div>
+          <aside class="notes">
+            Narrate turns the puzzle around. You see all the grids, including the one the model won't see. You know the answer.
+            Your job is to write a story so the model can rebuild the hidden grid from the other grids and your story. You can't spell the answer out cell by cell, or with numbers or coordinates. It has to be a story.
+            The model is qwen3.8-27b, the highlighted row in every table you've seen, running on MindRouter. You press a button, the model tries, and you see whether it worked. Then you revise.
+            This is close to a lot of real AI use. You know what the right answer looks like. The question is how to describe the situation so the tool gets there.
+          </aside>
+        </section>
+
+        <!-- 4.3 ACTIVITY -->
+        <section>
+          <p class="slide-kicker">Part 4 &middot; Your turn</p>
+          <h2>Write a different story</h2>
+          <div class="activity">
+            <div class="steps">
+              <div class="step"><span class="step-key">1</span><p>Go to <strong>narc.insight.uidaho.edu/narrate</strong> and enter the code.</p></div>
+              <div class="step"><span class="step-key">2</span><p>Pick a puzzle. Chat is the quickest.</p></div>
+              <div class="step"><span class="step-key">3</span><p>Write two to five sentences. A new setting is welcome: cooking, sports, your field.</p></div>
+              <div class="step"><span class="step-key">4</span><p>Submit. A test takes up to two minutes.</p></div>
+              <div class="step final"><span class="step-key">5</span><p>Read the result, revise, and try again.</p></div>
+              <p class="slide-callout" style="margin-top:0.3rem !important;">Challenge: Narrate&rsquo;s model failed The Accident with Jason&rsquo;s story. Can yours get it there?</p>
+            </div>
+            <div class="side-stack">
+              <img class="qr-small" src="img/qr-narrate.svg" alt="QR code for narc.insight.uidaho.edu/narrate" />
+              <div>
+                <p class="slide-micro" style="margin:0 !important;">Invite code</p>
+                <p class="invite-code" data-config="code">AISYMP2026</p>
+                <p class="slide-micro" style="margin:0 !important;" data-config="codeValid">Valid through November 30, 2026</p>
+              </div>
+              <div class="timer" data-minutes="12"></div>
+            </div>
+          </div>
+          <p class="slide-note" style="max-width:56rem;">Narrate is a research study for adults 18 or older, and it&rsquo;s voluntary. We don&rsquo;t ask for your name or email. Stories may be published without your name, so leave personal information out.</p>
+          <aside class="notes">
+            Here's the activity. Twelve minutes. Work alone or in pairs. Pairs keep the line for the model shorter.
+            Go to the Narrate page and enter the code on the slide. Pick a puzzle. Chat is the quickest one to start with.
+            Write two to five sentences. You can move the story anywhere you like: a kitchen, a ball game, your own field. Just don't spell out which cells change. Submit it, and you'll see in a minute or two whether the model rebuilt the hidden grid. Then revise.
+            If you want a challenge: Narrate's model did not solve The Accident with Jason's story. See if yours can.
+            A few rules, because this is a research study. It's for adults, it's voluntary, and we don't collect names or emails. Your stories may be published word for word, without your name, so keep personal information out.
+            If the page says the model is busy, wait a minute and try again. [Start the timer. Put mindrouter.uidaho.edu up on a second tab, so people can watch the load when everyone presses Submit.]
+          </aside>
+
+        </section>
+
+        <!-- 4.3b FALLBACK + BACKUPS (vertical stack: press down) -->
+
+        <section>
+          <section>
+            <p class="slide-kicker">Part 4 &middot; While you wait</p>
+            <h2>If the model is busy or the site is down</h2>
+            <div class="slide-grid">
+              <article class="slide-card"><h3>Busy</h3><p>Everyone pressed Submit at once. Wait a minute and press it again. Meanwhile, write a second version.</p></article>
+              <article class="slide-card"><h3>Down, or no laptop</h3><p>Write your story on a card. Bert will read a few aloud and test them from the front.</p></article>
+            </div>
+            <p class="slide-callout">Write a version that would work for a person. Then write one you think would work for the model. Are they the same?</p>
+            <aside class="notes">
+              Only use this slide if something goes wrong.
+              If the page says busy, the queue is full. Wait a minute.
+              If the site is down, or people don't have a device, hand out cards. I collect a few and test them from the presenter laptop while the room watches. Hadley, Jason and Chloe stay out of the Narrate activity itself, so they don't enter anyone's stories.
+              Press the down arrow for two backup slides from a pilot we ran with the Chat puzzle. They show the same idea without the live site.
+            </aside>
+          </section>
+
+          <!-- 4.3c BACKUP: SIX RETELLINGS -->
+          <section>
+            <p class="slide-kicker">Backup &middot; Same grids, six retellings</p>
+            <h2>Which stories work?</h2>
+            <div class="narc-seq" style="--cell:12px; margin-top:0;">
+              <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 1"></div></figure>
+              <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+              <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0],[0,0,7],[5,0,7]]" aria-label="Grid 2"></div></figure>
+              <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+              <figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 3"></div></figure>
+              <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+              <figure class="narc-panel"><div class="narc-grid narc-hidden-from-model" data-grid="[[5,0,7],[5,0,7],[5,0,7]]" aria-label="Grid 4, hidden from the model"></div></figure>
+            </div>
+            <div class="narr-grid">
+              <button class="narr-card" type="button" data-verdict="ok"><span class="narr-tag">Cooking</span><p class="narr-text">Two loaves of dough were rising on the counter. The first one sank when a cold draft came through the window. The second loaf, still warm, was pushed up against it, and the first puffed up higher than before. Then the second loaf rose too.</p><span class="narr-verdict"><span class="narr-result">Solved, 2 of 2 tries</span></span></button>
+              <button class="narr-card" type="button" data-verdict="fail"><span class="narr-tag">Sailing</span><p class="narr-text">Two boats rode the same gentle swell. The first dipped into a trough. A wave rolling off the second boat&rsquo;s bow lifted it higher than before. Then the second boat rose on the wave too.</p><span class="narr-verdict"><span class="narr-result">Not solved, 0 of 2 tries</span></span></button>
+              <button class="narr-card" type="button" data-verdict="fail"><span class="narr-tag">Fireflies</span><p class="narr-text">Two fireflies glowed softly side by side. The first one dimmed as the night cooled. Its neighbour flashed close beside it, and the first one brightened, glowing stronger than before. Seeing that, the neighbour brightened too.</p><span class="narr-verdict"><span class="narr-result">Not solved, 0 of 2 tries</span></span></button>
+              <button class="narr-card" type="button" data-verdict="ok"><span class="narr-tag">Theater</span><p class="narr-text">Two actors waited calmly in the wings. The first one&rsquo;s nerves sank him into dread. His scene partner whispered a joke, and he walked on stage beaming, bolder than before. His confidence made his partner beam too.</p><span class="narr-verdict"><span class="narr-result">Solved, 2 of 2 tries</span></span></button>
+              <button class="narr-card" type="button" data-verdict="ok"><span class="narr-tag">Gardening</span><p class="narr-text">Two sunflowers grew side by side. The first drooped during a dry spell. The second one&rsquo;s deep roots shared their water, and the first stood up taller than before. Then the second grew taller too.</p><span class="narr-verdict"><span class="narr-result">Solved, 2 of 2 tries</span></span></button>
+              <button class="narr-card" type="button" data-verdict="fail"><span class="narr-tag">Astronomy</span><p class="narr-text">Two stars shone with equal light. The first faded behind a passing cloud of dust. Its companion&rsquo;s pull swept the dust away, and it blazed brighter than before. Then the companion flared up too.</p><span class="narr-verdict"><span class="narr-result">Not solved, 0 of 2 tries</span></span></button>
+            </div>
+            <button class="narr-reveal-all" type="button">Reveal all</button>
+            <p class="narc-credit">Pilot test, October 2026. Retellings written with an AI assistant. Results for one open model, gpt-oss-120b, two tries each. The other two models tested solved all six.</p>
+            <aside class="notes">
+              Six retellings of the Chat puzzle. All six describe the same thing: one drops, the other helps, the first comes back higher, then the second rises too. All six are true to the grids.
+              Vote first. Which ones do you think worked? Then click to reveal.
+              For this model, dough, actors and sunflowers worked both times. Boats, fireflies and stars failed both times.
+              A caution. This is a small pilot. The retellings were written with an AI assistant. Each was tried twice on three open models, and I'm showing one. The other two solved all six. So don't read much into which settings failed.
+              What I want you to see is simpler. You can't tell from reading a story whether it will work. You have to try it and check.
+            </aside>
+          </section>
+
+          <!-- 4.3d BACKUP: LAST SENTENCE -->
+          <section>
+            <p class="slide-kicker">Backup &middot; Same grids, different ending</p>
+            <h2>Change the last sentence</h2>
+            <div class="toggle-compare">
+              <div class="toggle-header">
+                <button class="toggle-btn active" type="button" data-panel="happy" aria-pressed="true">&ldquo;This made Bob happy too.&rdquo;</button>
+                <button class="toggle-btn" type="button" data-panel="stay" aria-pressed="false">&ldquo;Bob stayed just as he was.&rdquo;</button>
+                <button class="toggle-btn" type="button" data-panel="leave" aria-pressed="false">&ldquo;Then Bob had to leave.&rdquo;</button>
+              </div>
+              <div class="toggle-panel active" data-panel="happy">
+                <div class="slide-split" style="justify-content:center;">
+                  <div class="narc-seq" style="--cell:40px; margin:0;"><figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,7],[5,0,7],[5,0,7]]" aria-label="Grid 4 as drawn"></div><figcaption class="narc-panel-label">Grid 4 drawn</figcaption></figure></div>
+                  <p style="max-width:22rem; margin:0; color:var(--ink);">The original story. Bob rises. This is what happened in the puzzle.</p>
+                </div>
+              </div>
+              <div class="toggle-panel" data-panel="stay">
+                <div class="slide-split" style="justify-content:center;">
+                  <div class="narc-seq" style="--cell:40px; margin:0;"><figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,0],[5,0,7],[5,0,7]]" aria-label="Grid 4 as drawn"></div><figcaption class="narc-panel-label">Grid 4 drawn</figcaption></figure></div>
+                  <p style="max-width:22rem; margin:0; color:var(--ink);">Bob&rsquo;s bar stays where it was. Two of the three models drew this both times.</p>
+                </div>
+              </div>
+              <div class="toggle-panel" data-panel="leave">
+                <div class="slide-split" style="justify-content:center;">
+                  <div class="narc-seq" style="--cell:40px; margin:0;"><figure class="narc-panel"><div class="narc-grid" data-grid="[[5,0,0],[5,0,0],[5,0,0]]" aria-label="Grid 4 as drawn"></div><figcaption class="narc-panel-label">Grid 4 drawn</figcaption></figure></div>
+                  <p style="max-width:22rem; margin:0; color:var(--ink);">Bob&rsquo;s bar is gone. All three models drew this, every time.</p>
+                </div>
+              </div>
+            </div>
+            <p class="slide-callout">The model followed the story it was given. Only someone who knows what happened can tell which story is true.</p>
+            <aside class="notes">
+              Same pilot. We kept the first three sentences and changed the last one.
+              "This made Bob happy too." Bob rises. That's what happened.
+              [click] "Bob stayed just as he was." Two of the three models drew that both times.
+              [click] "Then Bob had to leave." All three models drew that, every time.
+              The models did what the story said. In Narrate those would count as failures, because they don't match what happened. But the model didn't make a mistake. The story was wrong. The output looks equally confident either way.
+            </aside>
+          </section>
+        </section>
+
+        <!-- 4.4 DEBRIEF -->
+        <section>
+          <p class="slide-kicker">Part 4 &middot; Debrief</p>
+          <h2>How did it go?</h2>
+          <div class="tally">
+            <div class="tally-bar"></div>
+            <div class="tally-buttons">
+              <button class="tally-btn" type="button" data-n="0" data-label="Solved on the first try">Solved on the first try<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Solved after revising">Solved after revising<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Not yet">Not yet<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Didn't get to submit">Didn&rsquo;t get to submit<span class="tally-n">0</span></button>
+            </div>
+            <button class="tally-reset" type="button">Reset</button>
+          </div>
+          <div class="slide-grid" style="max-width:48rem; margin-left:auto; margin-right:auto;">
+            <article class="slide-card"><h3>Read us one</h3><p>A story that worked, and one that didn&rsquo;t.</p></article>
+            <article class="slide-card"><h3>What did you change?</h3><p>Between your first try and your last.</p></article>
+          </div>
+          <aside class="notes">
+            Hands up. Who solved it on the first try? [count, click] After revising? Not yet? Didn't get to submit?
+            Now, who will read us a story that worked? And one that didn't?
+            What did you change between tries? Listen for: naming who acts, putting events in order, being more literal, changing the setting.
+            [If time] Same point as the students' puzzles. Many true stories describe the same grids, and only some of them get the model there. You can't tell which by reading. You have to try it and check it against what you know happened.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ PART 5 · STORIES ABOUT AI THAT LEAVE US ROOM TO CHOOSE (19 min) ═══════════════ -->
+
+        <!-- 5.0 DIVIDER -->
+        <section class="part-divider" data-background-color="#191919">
+          <p class="slide-kicker">Part 5 &middot; Stories about AI</p>
+          <h2>Which stories about AI should we tell?</h2>
+          <p class="slide-lede">Ones that leave us room to choose.</p>
+          <aside class="notes">
+            Last part, and the longest. We've been telling stories to machines. Now let's look at the stories we tell about the machines.
+            Remember the email from Part 1. The story you tell about the facts picks your next step. The stories we tell about AI do the same thing for us. Some leave us something to decide. Some leave us nothing.
+          </aside>
+        </section>
+
+        <!-- 5.1 SAME NEWS, DIFFERENT STORIES (mirrors the email slide in Part 1) -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; A story picks what comes next</p>
+          <h2>A new AI tool arrives in your department</h2>
+          <div class="toggle-compare">
+            <div class="toggle-header">
+              <button class="toggle-btn active" type="button" data-panel="wave" aria-pressed="true">&ldquo;It&rsquo;s a wave.&rdquo;</button>
+              <button class="toggle-btn" type="button" data-panel="race" aria-pressed="false">&ldquo;It&rsquo;s an arms race.&rdquo;</button>
+              <button class="toggle-btn" type="button" data-panel="forklift" aria-pressed="false">&ldquo;It&rsquo;s a forklift.&rdquo;</button>
+            </div>
+            <div class="toggle-panel active" data-panel="wave">
+              <div class="slide-grid three">
+                <article class="slide-card"><h3>What you expect next</h3><p>It arrives whatever we do.</p></article>
+                <article class="slide-card"><h3>What you do</h3><p>Adapt fast, or fall behind.</p></article>
+                <article class="slide-card accent"><h3>Who decides</h3><p>No one. It&rsquo;s weather.</p></article>
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="race">
+              <div class="slide-grid three">
+                <article class="slide-card"><h3>What you expect next</h3><p>Whoever slows down loses.</p></article>
+                <article class="slide-card"><h3>What you do</h3><p>Adopt it everywhere, now.</p></article>
+                <article class="slide-card accent"><h3>Who decides</h3><p>Rivals, somewhere else.</p></article>
+              </div>
+            </div>
+            <div class="toggle-panel" data-panel="forklift">
+              <div class="slide-grid three">
+                <article class="slide-card"><h3>What you expect next</h3><p>It lifts whatever you point it at.</p></article>
+                <article class="slide-card"><h3>What you do</h3><p>Decide what&rsquo;s worth lifting yourself.</p></article>
+                <article class="slide-card accent"><h3>Who decides</h3><p>You.</p></article>
+              </div>
+            </div>
+          </div>
+          <p class="slide-callout">Same news. The first two stories leave us nothing to decide. The third hands the decision back.</p>
+          <aside class="notes">
+            Same move as the email. A new AI tool shows up in your department. Those are the facts.
+            [click wave] If it's a wave, it arrives whatever we do, and all you can do is adapt. Nobody decides. It's weather.
+            [click arms race] If it's an arms race, whoever slows down loses, so you adopt it everywhere, now. Somebody decides, but not anyone in this room. Like Hadley's hunter, the one who decides is out of the picture.
+            [click forklift] If it's a forklift, it lifts whatever you point it at. That story hands the decision back to you. What's worth lifting yourself?
+            That's where the next slide comes from.
+          </aside>
+        </section>
+
+        <!-- 5.2 THE GYM AND THE TREADMILL (from the Faculty AI Bootcamp, summer 2026) -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Two stories from the summer AI Bootcamp</p>
+          <h2>The gym and the treadmill</h2>
+          <div class="slide-grid three">
+            <article class="slide-card"><h3>Nobody brings a forklift to the gym</h3><p>The weight is the point. Some friction is the reps, the part that builds the skill. Some is the commute. Hand off the commute. Keep the reps.</p></article>
+            <article class="slide-card"><h3>The productivity treadmill</h3><p>AI saves an hour, and the hour fills with more output. We run faster and stay in the same place.</p></article>
+            <article class="slide-card accent"><h3>Add a plate on purpose</h3><p>Try it before you ask. Have the AI quiz you instead of answer you. Check one claim against the source.</p></article>
+          </div>
+          <p class="slide-callout">Both stories ask the same two questions. Which friction is the point? And where does the saved time go?</p>
+          <aside class="notes">
+            Two stories from the Faculty AI Bootcamp this summer.
+            The gym. Nobody brings a forklift to the gym. Not because it's against the rules, but because the weight is the point. Let the forklift move the bar and something impressive happened, but not to you. But you drove to the gym, and nobody calls that cheating. That's the commute.
+            So some friction in our work is reps, the part that builds the skill: drafting your own argument, working a proof, sitting with a hard reading. Some is commute: formatting citations, converting files. Hand off the commute and keep the reps. The line moves, though. Grammar is commute in a lab report and reps in a writing seminar.
+            The treadmill came from the bootcamp faculty, in their minute essays. AI saves you an hour, and the hour fills up with more output. You run faster and end up where you started. That story asks where the saved time goes, and who decides.
+            And sometimes you add a plate on purpose. Try the problem before you ask. Have the model quiz you instead of answer you. Check one claim against the source. Those are frictions we choose.
+            [Optional, if time] Ask Hadley, Jason and Chloe: as students, which friction would you want your professors to keep?
+          </aside>
+        </section>
+
+        <!-- 5.3 TALLY -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Hands up</p>
+          <h2>Which story fits your last month with AI?</h2>
+          <div class="tally">
+            <div class="tally-bar"></div>
+            <div class="tally-buttons">
+              <button class="tally-btn" type="button" data-n="0" data-label="Gym">Gym: it made me do the reps<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Forklift">Forklift: it lifted what I should have<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Commute">Commute: it took the dull parts<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Treadmill">Treadmill: saved time, filled it with more<span class="tally-n">0</span></button>
+              <button class="tally-btn" type="button" data-n="0" data-label="Barely used it">Barely used it<span class="tally-n">0</span></button>
+            </div>
+            <button class="tally-reset" type="button">Reset</button>
+          </div>
+          <aside class="notes">
+            One hand each. Which of these fits your last month with AI? [read the options, count, click]
+            There's no wrong answer, and most of us are a mix. If you're behind on time, skip this slide.
+          </aside>
+        </section>
+
+        <!-- 5.4 WHERE SHOULD AI GO? (click a card to sort it) -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Where should AI go?</p>
+          <h2>Keep it human, add friction, or hand it off?</h2>
+          <div class="sort-legend" aria-hidden="true">
+            <span class="sort-chip" data-state="keep">Keep it human</span>
+            <span class="sort-chip" data-state="friction">Use it, with friction</span>
+            <span class="sort-chip" data-state="hand">Hand it off</span>
+          </div>
+          <div class="sort-grid">
+            <button class="sort-card" type="button"><p>Feedback on a student&rsquo;s draft</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>Formatting a reference list</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>The first draft of your own argument</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>A recommendation letter</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>Reading a manuscript you were asked to review</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>Transcribing a research interview</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>Practice quiz questions for your class</p><span class="sort-state">Click to sort</span></button>
+            <button class="sort-card" type="button"><p>Replying to a hard email from a student</p><span class="sort-state">Click to sort</span></button>
+          </div>
+          <p class="slide-callout">There&rsquo;s no answer key. The line moves with the task and the person, which is why we draw it on purpose.</p>
+          <p class="slide-note"><button class="tally-reset sort-reset" type="button" style="margin:0;">Reset cards</button></p>
+          <aside class="notes">
+            Let's be intentional about where AI goes. Eight tasks from faculty work. For each one, the room decides: keep it human, use AI with friction, or hand it off. I'll click to sort as you call it out. Disagree with each other.
+            A few to slow down on.
+            Feedback on a student's draft: does the student need your reading, or any reading?
+            A manuscript you were asked to review: it's confidential, and NIH, for one, doesn't allow reviewers to use AI tools on grant applications.
+            Transcribing an interview: probably commute, but where does the recording go? This is where MindRouter matters, because it stays on university hardware.
+            The point isn't the sort. It's that the sort is ours to make.
+          </aside>
+        </section>
+
+        <!-- 5.5 STORIES THAT LOOK AHEAD -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Stories that look ahead</p>
+          <h2>It&rsquo;s 2031, and AI went well here. How?</h2>
+          <p class="draft-flag">Draft examples: Bert to pick or replace</p>
+          <div class="flip-grid four">
+            <button class="flip-card" type="button"><span class="flip-card-inner"><span class="flip-card-front"><span class="flip-tag">Our own tools</span><p>We ran our own AI and set its rules together, the way we run a library.</p></span><span class="flip-card-back"><p><strong>Asks of us now:</strong> show up when we decide what it&rsquo;s for.</p></span></span></button>
+            <button class="flip-card" type="button"><span class="flip-card-inner"><span class="flip-card-front"><span class="flip-tag">The sparring partner</span><p>AI made students do more reps, not fewer. It argued back and quizzed them.</p></span><span class="flip-card-back"><p><strong>Asks of us now:</strong> set it up to question, not to answer.</p></span></span></button>
+            <button class="flip-card" type="button"><span class="flip-card-inner"><span class="flip-card-front"><span class="flip-tag">Off the treadmill</span><p>The hours AI saved went to people: office hours, fieldwork, slow reading.</p></span><span class="flip-card-back"><p><strong>Asks of us now:</strong> decide where saved time goes before it&rsquo;s saved.</p></span></span></button>
+            <button class="flip-card" type="button"><span class="flip-card-inner"><span class="flip-card-front"><span class="flip-tag">The second opinion</span><p>AI was never the first word or the last. People formed a view, then asked.</p></span><span class="flip-card-back"><p><strong>Asks of us now:</strong> think first, ask second, and make the call yourself.</p></span></span></button>
+          </div>
+          <p class="slide-callout">A story worth telling says who decides, what we keep doing ourselves, and where the saved time goes.</p>
+          <aside class="notes">
+            Here's the turn I want us to make. Most stories about AI's future are things that happen to us: the wave, the race. Try telling one where people chose.
+            It's 2031, and AI went well at this university. How did that happen? Here are four to get you started. Each is a story about the future that asks something of us now. [flip two]
+            Our own tools: we ran our own AI and set its rules together, the way we run a library. MindRouter is a start on that. What it asks of us now is to show up when we decide what it's for.
+            Off the treadmill: the hours AI saved went to people, not to more output. That only happens if we decide where saved time goes before it's saved.
+            Here's a test for any story about AI's future. Does it say who decides? Does it say what we keep doing ourselves? Does it say where the saved time goes? The wave story fails all three.
+          </aside>
+        </section>
+
+        <!-- 5.6 TABLE DISCUSSION -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Talk at your table</p>
+          <h2>Three questions for your table</h2>
+          <div class="prompt-grid three">
+            <article class="prompt-card"><p class="prompt-from">Who decides?</p><h3>A story you hear</h3><p>Pick a story about AI you hear in your unit. Who acts in it? What does it leave you to decide?</p></article>
+            <article class="prompt-card"><p class="prompt-from">Where it goes</p><h3>Keep, add friction, hand off</h3><p>Name one task in your work for each. Where would you add a plate on purpose?</p></article>
+            <article class="prompt-card accent"><p class="prompt-from">Looking ahead</p><h3>Tell it from 2031</h3><p>AI went well here. In two sentences, what did we choose?</p></article>
+          </div>
+          <div style="margin-top:0.8rem;"><div class="timer" data-minutes="6"></div></div>
+          <aside class="notes">
+            Six minutes at your tables. Three questions. You don't need all three, but try to get to the last one.
+            First: pick a story about AI you hear in your unit. Who acts in it, and what does it leave you to decide?
+            Second: name one task in your own work to keep human, one to use with friction, and one to hand off. Where would you add a plate on purpose?
+            Third: it's 2031 and AI went well here. In two sentences, what did we choose?
+            Pick one person per table to report back with your 2031 story. [Start the timer]
+          </aside>
+        </section>
+
+        <!-- 5.7 SHARE-OUT BOARD -->
+        <section>
+          <p class="slide-kicker">Part 5 &middot; Share out</p>
+          <h2>What did your table choose?</h2>
+          <table class="board" data-store="shareout-2031">
+            <thead><tr><th scope="col">Our story from 2031</th><th scope="col">We&rsquo;d keep it human</th><th scope="col">A friction we&rsquo;ll choose</th></tr></thead>
+            <tbody>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+              <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            </tbody>
+          </table>
+          <p class="slide-note">Click a cell and type. Notes stay in this browser only. <button class="tally-reset board-clear" type="button" style="margin:0 0 0 0.4rem;">Clear board</button></p>
+          <aside class="notes">
+            One from each table. Your 2031 story first, then what you'd keep human and one friction you'll choose. [type their answers into the board as they talk]
+            Click into a cell to type. The arrow keys move the cursor while you're typing, so click outside the table before you change slides. Take a photo of the board at the end if you want to keep it.
+          </aside>
+        </section>
+
+        <!-- ═══════════════ CLOSE ═══════════════ -->
+
+        <!-- 6.1 TAKEAWAYS -->
+        <section>
+          <p class="slide-kicker">To take with you</p>
+          <h2>Choosing the story is a judgment call</h2>
+          <div class="slide-grid three">
+            <article class="slide-card"><h3>Stories fill gaps</h3><p>For people and for models, a story settles what the facts leave open.</p></article>
+            <article class="slide-card"><h3>Many true stories, some work</h3><p>You can&rsquo;t tell which by reading. You try it and check it against what you know.</p></article>
+            <article class="slide-card accent"><h3>Tell stories that leave you choices</h3><p>Ones that say who decides, which frictions we keep, and where the saved time goes.</p></article>
+          </div>
+          <aside class="notes">
+            Three things to take with you.
+            Stories fill gaps. For people and for models, a short story can settle what the facts leave open.
+            The same facts can be told many true ways, and only some of them get the model to the right answer. You can't tell which by reading. You try it and check.
+            And the stories we tell about AI decide what we do next. Tell the ones that leave you choices: who decides, which frictions we keep, and where the saved time goes.
+          </aside>
+        </section>
+
+        <!-- 6.2 KEEP GOING -->
+        <section>
+          <p class="slide-kicker">Keep going</p>
+          <h2>Thank you</h2>
+          <div class="link-grid">
+            <a class="slide-card" data-config="narrateUrl" data-keep-text="1" href="https://narc.insight.uidaho.edu/narrate">
+              <h3>Narrate</h3>
+              <p>Keep writing stories. Code <strong data-config="code">AISYMP2026</strong>, valid through <span data-config="codeUntil">November 30, 2026</span>.</p>
+            </a>
+            <a class="slide-card" data-config="narcUrl" data-keep-text="1" href="https://narc.insight.uidaho.edu">
+              <h3>NARC puzzles</h3>
+              <p>About 320 puzzles to solve, and a page to make your own.</p>
+            </a>
+            <a class="slide-card" data-config="mindrouterUrl" data-keep-text="1" href="https://mindrouter.uidaho.edu">
+              <h3>MindRouter</h3>
+              <p>The university&rsquo;s own AI service. Sign in with your university account.</p>
+            </a>
+          </div>
+          <p class="slide-note">These slides and a plain-text companion: <a data-config="deckUrl" href="#">bertybaums.github.io/narratives-workshop</a> &middot; Questions: <a href="mailto:bbaum@uidaho.edu">bbaum@uidaho.edu</a></p>
+          <aside class="notes">
+            Narrate stays open with today's code through the end of November, so you can keep at it, or use it in a class. The puzzles are public. MindRouter is yours to use.
+            The slides and a plain-text companion are at the link.
+            Thank you to Hadley, Jason and Chloe. Lunch is in the ballroom.
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="slides.js"></script>
+    <script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/plugin/notes/notes.js"></script>
+    <script>
+      Reveal.initialize({
+        width: 1280,
+        height: 720,
+        margin: 0.05,
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: "c/t",
+        transition: "slide",
+        pdfSeparateFragments: true,
+        plugins: [RevealNotes]
+      });
+    </script>
+  </body>
+</html>

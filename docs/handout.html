@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narratives Workshop Handout</title>
+<meta name="description" content="One-page participant handout for the Narrate activity at the University of Idaho AI Symposium, October 29, 2026.">
+<style>
+  :root { --ink: #191919; --quiet: #4d4d4d; --gold: #f1b300; --line: #cfcfcf; }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; max-width: 44rem; padding: 1.2rem; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: #fff; font-size: 11pt; line-height: 1.4; }
+  header { border-bottom: 6px solid var(--gold); padding-bottom: .6rem; margin-bottom: .9rem; }
+  h1 { font-size: 19pt; line-height: 1.15; margin: 0 0 .25rem; }
+  h2 { font-size: 13pt; margin: 1rem 0 .4rem; }
+  p { margin: .3rem 0; }
+  .meta { color: var(--quiet); font-size: 10pt; }
+  .top { display: grid; grid-template-columns: 1fr 10rem; gap: 1.2rem; align-items: start; }
+  .code { display: inline-block; margin: .2rem 0; padding: .3rem .8rem; border: 2px solid var(--ink); border-radius: .4rem; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 18pt; font-weight: 800; letter-spacing: .08em; }
+  figure { margin: 0; text-align: center; }
+  figure img { width: 10rem; height: 10rem; }
+  figcaption { font-size: 9pt; color: var(--quiet); }
+  ol { margin: .3rem 0; padding-left: 1.3rem; }
+  li { margin: .25rem 0; }
+  .notice { margin-top: .8rem; padding: .5rem .8rem; border-left: 5px solid var(--gold); background: #fffbeb; font-size: 10pt; }
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem 1.2rem; font-size: 10pt; }
+  .card-line { margin-top: .9rem; border-top: 1px dashed var(--line); padding-top: .6rem; }
+  .write { height: 5.2rem; border: 1px solid var(--line); border-radius: .4rem; }
+  @page { size: Letter; margin: 0.5in; }
+  @media print { body { padding: 0; max-width: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Narratives that have, and will, shape both us and the machines</h1>
+  <p class="meta">University of Idaho AI Symposium &middot; Thursday, October 29, 2026, 11:45 am to 1:00 pm &middot; Bert Baumgaertner, with Hadley Huzefka, Jason Culbertson and Chloe Luo of the NARC lab</p>
+</header>
+
+<main>
+  <div class="top">
+    <div>
+      <h2>Write a story a model can follow</h2>
+      <p>Go to <strong>narc.insight.uidaho.edu/narrate</strong> and enter this invite code:</p>
+      <p class="code">AISYMP2026</p>
+      <p class="meta">Valid through November 30, 2026.</p>
+      <ol>
+        <li>Pick a puzzle. Chat is the quickest.</li>
+        <li>You see every grid, including the one the model won&rsquo;t see.</li>
+        <li>Write two to five sentences about what happens. Don&rsquo;t spell out cells, numbers or coordinates. A new setting is welcome: cooking, sports, your field.</li>
+        <li>Submit. A test takes up to two minutes. If it says the model is busy, wait a minute.</li>
+        <li>Read the result, revise, and try again.</li>
+      </ol>
+      <p><strong>Challenge:</strong> Narrate&rsquo;s model failed The Accident with the original story. Can yours get it there?</p>
+    </div>
+    <figure>
+      <img src="img/qr-narrate.svg" alt="QR code for narc.insight.uidaho.edu/narrate">
+      <figcaption>Scan for Narrate</figcaption>
+    </figure>
+  </div>
+
+  <p class="notice">Narrate is a research study for adults 18 or older, and it&rsquo;s voluntary. We don&rsquo;t ask for your name or email.
+  Stories may be published without your name, so leave personal information out.</p>
+
+  <h2>Links</h2>
+  <div class="links">
+    <p><strong>Slides and accessible companion:</strong><br>bertybaums.github.io/narratives-workshop</p>
+    <p><strong>NARC puzzles:</strong><br>narc.insight.uidaho.edu</p>
+    <p><strong>MindRouter, the university&rsquo;s own AI service:</strong><br>mindrouter.uidaho.edu</p>
+    <p><strong>Questions:</strong><br>bbaum@uidaho.edu</p>
+  </div>
+
+  <div class="card-line">
+    <h2>No laptop? Write your story here</h2>
+    <p class="meta">Puzzle: ____________________ &nbsp; Hand it to Bert, and he&rsquo;ll test a few from the front.</p>
+    <div class="write" role="presentation"></div>
+  </div>
+</main>
+</body>
+</html>

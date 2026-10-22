@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narratives Workshop Companion</title>
+<meta name="description" content="Accessible reading companion to the interactive slides for the workshop Narratives that have, and will, shape both us and the machines. University of Idaho AI Symposium, October 29, 2026. Same content as the slides, in linear form, with every puzzle grid described in words.">
+<style>
+  :root {
+    --ink: #23373B;        /* body text on white: 12:1 */
+    --rule: #4A6A70;       /* teal rule: 5.6:1 */
+    --accent: #A85400;     /* dark orange: 5.1:1 on white, 4.8:1 on the cream callout */
+    --note-bg: #EAF1F2;
+    --transfer-bg: #FAF1E6;
+    --tbl-head: #E8F0F2;
+    --tbl-border: #B7C4C7;
+    --quiet: #4A5A5E;      /* 6.5:1 on white */
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Fira Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 1.0625rem;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.4rem; margin: 2.4rem 0 .6rem; padding-bottom: .3rem; border-bottom: 2px solid var(--rule); }
+  h3 { font-size: 1.1rem; margin: 1.5rem 0 .3rem; color: var(--ink); }
+  h4 { font-size: 1rem; margin: 1.1rem 0 .2rem; text-transform: uppercase; letter-spacing: .04em; color: var(--rule); }
+  p, li { margin: .5rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  strong { font-weight: 600; }
+  a { color: var(--ink); text-decoration: underline; }
+  a:focus-visible, :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .skip { position: absolute; left: -999px; top: auto; background: var(--ink); color: #fff; padding: .6rem 1rem; text-decoration: none; border-radius: 0 0 6px 0; }
+  .skip:focus { left: 0; top: 0; z-index: 10; }
+  .meta { color: var(--quiet); font-size: .95rem; }
+  .about { background: var(--note-bg); border-left: 4px solid var(--rule); padding: .8rem 1rem; border-radius: 0 6px 6px 0; margin: 1.2rem 0; }
+  nav[aria-label="Contents"] ol { line-height: 1.9; }
+  blockquote.story { margin: .8rem 0; padding: .7rem 1rem; background: var(--transfer-bg); border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0; }
+  blockquote.story p { margin: .2rem 0; }
+  .label { font-weight: 700; }
+  .story .label { color: var(--accent); }
+  .inwords { background: var(--note-bg); border-left: 4px solid var(--rule); padding: .7rem 1rem; border-radius: 0 6px 6px 0; margin: .6rem 0 0; }
+  .inwords ol { margin: .3rem 0; }
+  aside.callout { background: var(--transfer-bg); border-left: 4px solid var(--accent); padding: .7rem 1rem; border-radius: 0 6px 6px 0; margin: 1rem 0; }
+  aside.callout .label { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  caption { text-align: left; font-style: italic; color: var(--quiet); margin-bottom: .5rem; }
+  th, td { border: 1px solid var(--tbl-border); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  thead th, tbody th { background: var(--tbl-head); }
+  td.c { text-align: center; }
+  .draft { font-weight: 700; color: var(--accent); }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #D9E2E4; color: var(--quiet); font-size: .9rem; }
+  @media print {
+    body { max-width: none; font-size: 11pt; }
+    h2 { break-after: avoid; }
+    table, blockquote, .inwords { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <h1>Narratives that have, and will, shape both us and the machines</h1>
+  <p class="meta">Accessible reading companion to the workshop slides. University of Idaho AI Symposium, Track 4: AI Ethics and Future. Thursday, October 29, 2026, 11:45 am to 1:00 pm, Bruce Pitman Center.<br>
+  Presenters: Bert Baumgaertner (Politics and Philosophy), with Hadley Huzefka, Jason Culbertson and Chloe Luo of the NARC lab.</p>
+
+  <div class="about">
+    <p><strong>About this document.</strong> The workshop slides are an interactive web page. This companion carries the same
+    content in a linear, screen-reader-friendly order. Every puzzle picture is described in words, every chart is a table
+    with header cells, and every activity is written out as steps. You can read it before, during or after the session.</p>
+    <p><strong>The puzzles in one sentence.</strong> Each puzzle is a short strip of small colored grids, like frames of a
+    cartoon, with one frame hidden. A short story goes with it. The task is to rebuild the hidden frame exactly.</p>
+  </div>
+</header>
+
+<nav aria-label="Contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#plan">The plan for the 75 minutes</a></li>
+    <li><a href="#part1">Part 1: Stories we reason with</a></li>
+    <li><a href="#part2">Part 2: How a NARC puzzle works, and how the models did</a></li>
+    <li><a href="#part3">Part 3: Three puzzles from the NARC lab</a></li>
+    <li><a href="#part4">Part 4: Your turn, on Narrate and MindRouter</a></li>
+    <li><a href="#part5">Part 5: Stories about AI that leave us room to choose</a></li>
+    <li><a href="#close">To take with you, and links</a></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+<section aria-labelledby="plan">
+  <h2 id="plan">The plan for the 75 minutes</h2>
+  <table>
+    <caption>Workshop parts, presenters and times</caption>
+    <thead><tr><th scope="col">Part</th><th scope="col">Who</th><th scope="col">Time</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1. Stories we reason with</th><td>Bert</td><td>5 minutes</td></tr>
+      <tr><th scope="row">2. How a NARC puzzle works, and how the models did</th><td>Bert</td><td>5 minutes</td></tr>
+      <tr><th scope="row">3. Three puzzles from the lab</th><td>Hadley, Jason, Chloe</td><td>21 minutes</td></tr>
+      <tr><th scope="row">4. Your turn: write a story, test it on MindRouter</th><td>Everyone</td><td>20 minutes</td></tr>
+      <tr><th scope="row">5. Stories about AI that leave us room to choose</th><td>Discussion</td><td>19 minutes</td></tr>
+    </tbody>
+  </table>
+  <p>A welcome and a short close fill the remaining five minutes. Lunch follows at 1:00 in International Ballroom North.</p>
+</section>
+
+<section aria-labelledby="part1">
+  <h2 id="part1">Part 1: Stories we reason with</h2>
+  <p>We reason with narratives, analogies and metaphors all the time: in daily life, in teaching and in research. The workshop
+  calls them NAMs for short. A NAM lets you predict what comes next, and every NAM breaks somewhere.</p>
+
+  <table>
+    <caption>Six NAMs: what each lets you predict, and where it breaks</caption>
+    <thead><tr><th scope="col">Where</th><th scope="col">The NAM</th><th scope="col">Lets you predict</th><th scope="col">Breaks when</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Daily life</th><td>&ldquo;Traffic is flowing.&rdquo; (metaphor)</td><td>A jam spreads backward, like a wave in a pipe.</td><td>Drivers make choices; water doesn&rsquo;t.</td></tr>
+      <tr><th scope="row">Daily life</th><td>&ldquo;My phone is dying.&rdquo; (metaphor)</td><td>It needs charging soon, or it stops.</td><td>A dead phone comes back once you plug it in.</td></tr>
+      <tr><th scope="row">Teaching</th><td>&ldquo;An atom is a tiny solar system.&rdquo; (analogy)</td><td>Electrons circle the nucleus like planets.</td><td>Electrons don&rsquo;t follow orbits, so it fails for chemistry.</td></tr>
+      <tr><th scope="row">Teaching</th><td>&ldquo;Memory is a filing cabinet.&rdquo; (metaphor)</td><td>Memories are stored, then pulled out intact.</td><td>Remembering rebuilds a memory, and can change it.</td></tr>
+      <tr><th scope="row">Research</th><td>&ldquo;Natural selection&rdquo; (analogy with a breeder&rsquo;s choices)</td><td>Helpful traits spread over generations.</td><td>No one is doing the selecting.</td></tr>
+      <tr><th scope="row">Research</th><td>&ldquo;DNA is a blueprint.&rdquo; (metaphor)</td><td>The genes spell out the finished body.</td><td>Development depends on the environment too.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A story picks what comes next</h3>
+  <p>An everyday case: a colleague hasn&rsquo;t answered your email in a week. Those are the facts. The story you tell about them decides what you do.</p>
+  <table>
+    <caption>Three stories about the same unanswered email</caption>
+    <thead><tr><th scope="col">The story</th><th scope="col">What you expect next</th><th scope="col">What you do</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">&ldquo;She&rsquo;s swamped.&rdquo;</th><td>A reply, eventually.</td><td>Wait. Maybe a gentle nudge.</td></tr>
+      <tr><th scope="row">&ldquo;She&rsquo;s annoyed with me.&rdquo;</th><td>Silence, or a cool reply.</td><td>Apologize. Walk over to her office.</td></tr>
+      <tr><th scope="row">&ldquo;It went to spam.&rdquo;</th><td>Nothing, until you fix it.</td><td>Resend from another account.</td></tr>
+    </tbody>
+  </table>
+  <aside class="callout"><p><span class="label">The point:</span> same facts, a different story, a different next step.
+  The NARC lab built puzzles to study this, in people and in AI models.</p></aside>
+</section>
+
+<section aria-labelledby="part2">
+  <h2 id="part2">Part 2: How a NARC puzzle works, and how the models did</h2>
+  <p>NARC stands for Narrative Augmented Reasoning Challenges. Each puzzle has three parts.</p>
+  <ol>
+    <li><strong>A strip of small grids.</strong> Three to eight frames that show something happening. One frame is hidden.</li>
+    <li><strong>A short story.</strong> It doesn&rsquo;t describe the grids. It helps only if you read it as being about the shapes.</li>
+    <li><strong>Rebuild the hidden grid.</strong> Exactly, every cell the right color. Close doesn&rsquo;t count.</li>
+  </ol>
+  <p>There are about 320 public puzzles at <a href="https://narc.insight.uidaho.edu">narc.insight.uidaho.edu</a>.
+  Anyone can solve them, and anyone can submit one.</p>
+
+  <h3>Try one: Chat</h3>
+  <div class="inwords">
+    <p><span class="label">The grids, in plain words.</span> Each grid is 3 cells by 3 cells. A gray bar stands in the left column
+    and an orange bar in the right column. Both grow up from the bottom. The middle column is always empty.</p>
+    <ol>
+      <li>Grid 1: gray bar 2 cells tall, orange bar 2 cells tall.</li>
+      <li>Grid 2: gray bar drops to 1 cell; orange stays at 2.</li>
+      <li>Grid 3: gray bar rises to 3 cells, the full height; orange stays at 2.</li>
+      <li>Grid 4: hidden. What goes here?</li>
+    </ol>
+  </div>
+  <blockquote class="story"><p class="label">The story</p><p>Ally and Bob met to chat. Ally became sad. After some encouraging words from Bob, Ally became happy. This made Bob happy too.</p></blockquote>
+  <p><strong>Reading it:</strong> gray is Ally, orange is Bob, and the height of a bar is mood. Ally drops when she&rsquo;s sad and
+  comes back higher when she&rsquo;s happy. <strong>The answer:</strong> &ldquo;This made Bob happy too,&rdquo; so in grid 4 both bars are 3 cells tall.</p>
+
+  <h3>How to read a results table</h3>
+  <p>Every puzzle is also given to AI models. The students&rsquo; puzzles in Part 3 use the same kind of table, so here is how to read one.</p>
+  <ol>
+    <li><strong>Each row is one AI model.</strong></li>
+    <li><strong>Three tests.</strong> Grids only: the model sees the strip and fills in the hidden grid. Story only: it gets the story and is told how many grids there are and which one is hidden. Both: grids and story together. &ldquo;Yes&rdquo; means it got every cell right.</li>
+    <li><strong>Two follow-ups, run three times each, only for models that solved it with both.</strong> Shuffled grids: the same grids and story, with the grids in a random order; the number is how many of 3 shuffles the model still solved. Key words only: the story replaced by an alphabetized list of its key words; the number is how many of 3 tries it solved. For Chat, the key words are: ally, became, bob, chat, encouraging, happy, made, met, sad, words.</li>
+    <li><strong>Narrate&rsquo;s model</strong>, qwen3.8-27b, is the one participants write for in Part 4.</li>
+  </ol>
+  <table>
+    <caption>Chat: results for 11 models, October 21, 2026. Solved or not; shuffle and key-word columns count successes out of 3.</caption>
+    <thead><tr><th scope="col">Model</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Shuffled grids</th><th scope="col">Key words only</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">gemma-4-26b (Google)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gemma-4-31b (Google)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">glm-5.3-flash (Z.ai, retired)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>1 of 3</td></tr>
+      <tr><th scope="row">gpt-oss-120b (OpenAI)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>1 of 3</td></tr>
+      <tr><th scope="row">gpt-oss-20b (OpenAI)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">kimi-k3 (Moonshot AI)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">mimo-v2.6-flash (Xiaomi, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">nemotron-3-super (NVIDIA)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.5-122b (Alibaba Qwen)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.6-27b (Alibaba Qwen)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.8-27b (Alibaba Qwen; Narrate&rsquo;s model)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>1 of 3</td></tr>
+    </tbody>
+  </table>
+  <p><strong>In plain words:</strong> no model solved Chat from the grids alone or the story alone; 5 of 11 solved it with both.
+  None of those five solved it with the grids shuffled, so the order mattered. Three of them solved it once in three tries from the key words alone.</p>
+  <aside class="callout"><p><span class="label">The NARC property:</span> a puzzle has it for a model when the model needs
+  both the grids and the story. The story did work the pictures couldn&rsquo;t do alone. One caution: each model gets one try
+  per test, and reruns change about one verdict in six, so read the pattern across models rather than any single result.</p></aside>
+
+  <h3>What we mean by a model, and where they run</h3>
+  <ul>
+    <li><strong>A model is one trained AI system.</strong> Chatbots like ChatGPT and Claude are apps built on models. Each row in the tables is a different model.</li>
+    <li><strong>Different makers, different sizes.</strong> Google (gemma), OpenAI (gpt-oss), Alibaba (qwen), Moonshot AI (kimi), NVIDIA (nemotron). &ldquo;Open weights&rdquo; means the maker released the model itself, so anyone can run it. The number in a name is roughly its size in billions of parameters, the numbers a model learns in training: 120b means 120 billion.</li>
+    <li><strong>Most run on MindRouter.</strong> MindRouter is the University of Idaho&rsquo;s own AI service. According to the MindRouter site, every model it serves runs on university-owned GPUs, and prompts and replies stay on university infrastructure. Eleven of the twelve models in the students&rsquo; tables are open models that ran on it. Two of those (glm-5.3-flash and mimo-v2.6-flash) were retired from MindRouter on October 1, 2026. Claude Fable 5.1 is a commercial model, run off campus, for comparison.</li>
+    <li><strong>Open to you.</strong> Sign in with your university account at <a href="https://mindrouter.uidaho.edu">mindrouter.uidaho.edu</a>. You can chat in the browser, or create a key to use it from your own code. Narrate uses it too.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="part3">
+  <h2 id="part3">Part 3: Three puzzles from the NARC lab</h2>
+  <p>Three undergraduates in the lab each made a puzzle, tested it against the models and wrote down what they learned.
+  The result tables below are copied from the public results page on October 21, 2026, and read the same way as the Chat
+  table in Part 2. They add a twelfth model, Claude Fable 5.1, the commercial one.</p>
+
+  <!-- HUNT -->
+  <h3 id="hunt">Hunt, by Hadley</h3>
+  <div class="inwords">
+    <p><span class="label">The grids, in plain words.</span> Each grid is 5 by 5. Rows are numbered from the top and columns from the left.
+    Green cells (grass) sit at row 1 column 4, row 4 column 4, and row 5 column 2 in every grid.</p>
+    <ol>
+      <li>Grid 1: four yellow cells (ducks) at row 2 column 2, row 3 column 4, row 5 column 1, and row 5 column 5.</li>
+      <li>Grid 2: the duck at row 2 column 2 has turned red. The ducks at row 3 column 4 and row 5 column 1 are gone. The duck at row 5 column 5 is still yellow.</li>
+      <li>Grid 3: the duck at row 5 column 5 has turned red too.</li>
+      <li>Grid 4: hidden.</li>
+    </ol>
+  </div>
+  <blockquote class="story"><p class="label">Hadley&rsquo;s story</p><p>Treb likes to go hunting in his free time. In the marshy area behind his house, a flock of ducks likes to hang out. The green grass can sometimes make shooting the ducks difficult, as the ducks will hide behind them. Treb was lucky enough to snipe one duck. However, the shot startled the surrounding ducks, and the ones closest to the grass hid. Treb noticed one duck still sitting out. After getting two ducks, he collects his stuff and leaves. The remaining ducks emerge from the grass to discover only bloody puddles left of their friends.</p></blockquote>
+  <p><strong>The answer:</strong> the two ducks that hid come back out, yellow again at row 3 column 4 and row 5 column 1. The two red cells stay where they are, and the grass doesn&rsquo;t change.</p>
+
+  <h4>Reading the story</h4>
+  <p>Hadley&rsquo;s identifiers for human readers: ducks are yellow, grass is green, blood is red, hiding means not visible, and emerging means visible again.
+  Hadley also wrote a simplified version that names the colors:</p>
+  <blockquote class="story"><p class="label">Simplified story</p><p>The yellow ducks like to sit in the green grass. The hunter comes along and shoots two yellow ducks. The other two ducks hide behind the green grass. When the two yellow ducks emerge from behind the green grass, they see the red puddles left of their friends.</p></blockquote>
+
+  <h4>How the models did</h4>
+  <table>
+    <caption>Hunt: results for 12 models, October 21, 2026. Solved or not; shuffle and key-word columns count successes out of 3.</caption>
+    <thead><tr><th scope="col">Model</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Shuffled grids</th><th scope="col">Key words only</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">claude-fable-5-1 (Anthropic, commercial)</th><td>no</td><td>no</td><td>yes</td><td>not tested</td><td>not tested</td></tr>
+      <tr><th scope="row">gemma-4-26b (Google)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gemma-4-31b (Google)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">glm-5.3-flash (Z.ai, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gpt-oss-120b (OpenAI)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">gpt-oss-20b (OpenAI)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">kimi-k3 (Moonshot AI)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">mimo-v2.6-flash (Xiaomi, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">nemotron-3-super (NVIDIA)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.5-122b (Alibaba Qwen)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.6-27b (Alibaba Qwen)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.8-27b (Alibaba Qwen; Narrate&rsquo;s model)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+    </tbody>
+  </table>
+  <p><strong>In plain words:</strong> no model solved Hunt from the grids alone or the story alone; 8 of 12 solved it with both.
+  Four of them never solved it with the grids shuffled, so they needed the order. None solved it from the key-word list.</p>
+
+  <h4>What Hadley learned</h4>
+  <ul>
+    <li><strong>The hunter is never in the picture.</strong> Treb never appears in the grids, but he decides which ducks are there. An agent can be present in the story and absent from the scene.</li>
+    <li><strong>Guess, then intuitive, then obvious.</strong> Without the story you guess. With it, the answer feels obvious.</li>
+    <li><strong>Simple and complex stories both matter.</strong> The same solution can be told in ways that look very different.</li>
+    <li><strong>One problem, many perspectives.</strong> Different readers, one right answer. Next: one problem, many stories, which is what Narrate is for.</li>
+  </ul>
+
+  <!-- ACCIDENT -->
+  <h3 id="accident">The Accident, by Jason</h3>
+  <div class="inwords">
+    <p><span class="label">The grids, in plain words.</span> Each grid is 6 by 6, rows numbered from the top.</p>
+    <ol>
+      <li>Grid 1: light blue fills the top five rows, except a 2-by-2 yellow block in the top right corner. A red cell sits at row 5 column 2. The bottom row is black.</li>
+      <li>Grid 2: everything is black except a 2-by-2 gray block in the top left corner and the red cell, still at row 5 column 2.</li>
+      <li>Grid 3: the gray block has moved to the top middle (columns 3 and 4). The red cell is still at row 5 column 2. A green cell has appeared at row 5 column 4.</li>
+      <li>Grid 4: hidden.</li>
+    </ol>
+  </div>
+  <blockquote class="story"><p class="label">Jason&rsquo;s story</p><p>A car stalls out on an empty highway in the middle of the desert. The driver has no cellphone service. All they can do is wait and hope that someone passes by to help. In the middle of the night, a giant tortoise approaches the vehicle. For hours, it sits and stares, wondering about the strange, still beast before it. Suddenly, the driver, who has fallen asleep at this point, feels a jolt as the car loses traction and crushes the curious tortoise.</p></blockquote>
+  <p><strong>The answer:</strong> the gray block has moved on to the top right corner (columns 5 and 6). The red cell has moved to row 5 column 4, where the green cell was, and the green cell is gone.</p>
+  <h4>Reading the story</h4>
+  <p>Jason&rsquo;s identifiers for human readers: the sun is yellow, the sky is blue and then black, the car is red, the tortoise is green, and the moon is gray.
+  Neither version of the story mentions the sun or the moon; the reader supplies them. Jason also wrote a simplified version that names the colors:</p>
+  <blockquote class="story"><p class="label">Simplified story</p><p>A red car stalls out on an empty highway. In the middle of the night, a giant green tortoise approaches the red vehicle. The driver, who has fallen asleep at this point, feels a jolt as the car loses traction and crushes the curious tortoise.</p></blockquote>
+
+  <h4>How the models did</h4>
+  <table>
+    <caption>The Accident: results for 12 models, October 21, 2026</caption>
+    <thead><tr><th scope="col">Model</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Shuffled grids</th><th scope="col">Key words only</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">claude-fable-5-1 (Anthropic, commercial)</th><td>no</td><td>no</td><td>yes</td><td>not tested</td><td>not tested</td></tr>
+      <tr><th scope="row">gemma-4-26b (Google)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">gemma-4-31b (Google)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">glm-5.3-flash (Z.ai, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gpt-oss-120b (OpenAI)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">gpt-oss-20b (OpenAI)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">kimi-k3 (Moonshot AI)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">mimo-v2.6-flash (Xiaomi, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">nemotron-3-super (NVIDIA)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.5-122b (Alibaba Qwen)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.6-27b (Alibaba Qwen)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">qwen3.8-27b (Alibaba Qwen; Narrate&rsquo;s model)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+    </tbody>
+  </table>
+  <p><strong>In plain words:</strong> 4 of 12 models solved The Accident with both grids and story, and none without both.
+  Every model that solved it failed all three shuffles and all three key-word lists. Narrate&rsquo;s model, qwen3.8-27b, did not solve it.</p>
+
+  <h4>What Jason learned <span class="draft">(numbers updated to the live table; Jason to confirm)</span></h4>
+  <ul>
+    <li><strong>Easy for us still tells us a lot.</strong> A puzzle that&rsquo;s easy for people can still tell us a lot about AI.</li>
+    <li><strong>A few simple pieces.</strong> The Accident only takes the car, the tortoise and the event.</li>
+    <li><strong>The story did the work.</strong> With the story, 4 of 12 models solved it. Without it, none did.</li>
+    <li><strong>Anyone can play, make or judge these puzzles</strong>, and learn how AI thinks while they do it. The puzzles invite teaching, learning and work across fields.</li>
+  </ul>
+  <p>A bigger question: how does AI use stories to abstract and reason?</p>
+
+  <!-- BALLERINA -->
+  <h3 id="ballerina">Ballerina 4, by Chloe</h3>
+  <div class="inwords">
+    <p><span class="label">The grids, in plain words.</span> Each grid is 5 by 5, rows numbered from the top. Light blue cells are dancers in the crew; one red cell is the ballerina.</p>
+    <ol>
+      <li>Grid 1: the crew forms a V in the top three rows (row 1 columns 1 and 5, row 2 columns 2 and 4, row 3 column 3). The ballerina is in the bottom left corner.</li>
+      <li>Grid 2: the crew forms an upside-down V (row 1 column 3, row 2 columns 2 and 4, row 3 columns 1 and 5). The ballerina is still in the bottom left corner.</li>
+      <li>Grid 3: crew at row 1 columns 1 and 5, row 3 columns 1 and 5, and row 4 column 3. The ballerina has moved to row 4 column 2.</li>
+      <li>Grid 4: hidden.</li>
+      <li>Grid 5: the whole crew stands in a line across the top row. The ballerina is gone.</li>
+    </ol>
+  </div>
+  <blockquote class="story"><p class="label">Chloe&rsquo;s story</p><p>A ballerina collaborated with a street dance crew for a performance. The street dance crew took the stage first, constantly changing formations and movements in sync with the music. The ballerina waited at the back of the stage for her entrance. As the music gradually slowed down, she began to join the performance. When the performance reached its climax, only the ballerina performed at the center of the stage while all the street dance crew members paused at the back of the stage. At the end of the show, the ballerina fully exited, and the street dance crew finished the performance at the very front of the stage in an unchanged formation.</p></blockquote>
+  <p><strong>The answer:</strong> the ballerina alone at the center (row 3 column 3), and the whole crew in a line across the bottom row.</p>
+  <h4>Reading the story <span class="draft">(draft key, to be confirmed by Chloe)</span></h4>
+  <p>Red is the ballerina and light blue is the street dance crew. The top row is the front of the stage and the bottom row is the back.
+  Solving it takes both understanding the story and tracking where every dancer stands from one frame to the next.</p>
+
+  <h4>How the models did</h4>
+  <table>
+    <caption>Ballerina 4: results for 12 models, October 21, 2026</caption>
+    <thead><tr><th scope="col">Model</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Shuffled grids</th><th scope="col">Key words only</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">claude-fable-5-1 (Anthropic, commercial)</th><td>no</td><td>no</td><td>yes</td><td>not tested</td><td>not tested</td></tr>
+      <tr><th scope="row">gemma-4-26b (Google)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gemma-4-31b (Google)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">glm-5.3-flash (Z.ai, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">gpt-oss-120b (OpenAI)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">gpt-oss-20b (OpenAI)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">kimi-k3 (Moonshot AI)</th><td>no</td><td>no</td><td>yes</td><td>2 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">mimo-v2.6-flash (Xiaomi, retired)</th><td>no</td><td>no</td><td>no</td><td>not run</td><td>not run</td></tr>
+      <tr><th scope="row">nemotron-3-super (NVIDIA)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.5-122b (Alibaba Qwen)</th><td>no</td><td>no</td><td>yes</td><td>1 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.6-27b (Alibaba Qwen)</th><td>no</td><td>no</td><td>yes</td><td>0 of 3</td><td>0 of 3</td></tr>
+      <tr><th scope="row">qwen3.8-27b (Alibaba Qwen; Narrate&rsquo;s model)</th><td>no</td><td>no</td><td>yes</td><td>3 of 3</td><td>0 of 3</td></tr>
+    </tbody>
+  </table>
+  <p><strong>In plain words:</strong> 8 of 12 models solved Ballerina 4 with both grids and story, and none without both.
+  Here most solvers could still solve it some of the time with the grids shuffled, so order mattered less than in Hunt or
+  The Accident. No model solved it from the key-word list.</p>
+
+  <h4>What Chloe learned</h4>
+  <ul>
+    <li><strong>Two skills at once.</strong> Models have to understand the story and track positions and formations across the grids.</li>
+    <li><strong>Different models, different results.</strong> The same puzzle split the twelve models eight to four.</li>
+    <li><strong>Small changes matter.</strong> Hiding grids 4 and 5 together, instead of grid 4 alone, changed how the models did.</li>
+    <li><strong>Variations are a probe.</strong> Small variations can show a model&rsquo;s strengths and weaknesses.</li>
+  </ul>
+
+  <h3>What the three puzzles show</h3>
+  <table>
+    <caption>The three puzzles side by side, October 21, 2026</caption>
+    <thead><tr><th scope="col">Puzzle</th><th scope="col">Grids only</th><th scope="col">Story only</th><th scope="col">Grids + story</th><th scope="col">Key words only</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Hunt</th><td>0 of 12</td><td>0 of 12</td><td>8 of 12</td><td>0 of 7 models</td></tr>
+      <tr><th scope="row">The Accident</th><td>0 of 12</td><td>0 of 12</td><td>4 of 12</td><td>0 of 3 models</td></tr>
+      <tr><th scope="row">Ballerina 4</th><td>0 of 12</td><td>0 of 12</td><td>8 of 12</td><td>0 of 7 models</td></tr>
+    </tbody>
+  </table>
+  <p>&ldquo;Key words only&rdquo; counts the models that solved the puzzle with the story, not counting Claude Fable, which wasn&rsquo;t tested. Each got three tries.</p>
+  <aside class="callout"><p><span class="label">The point:</span> the pictures alone leave the answer open. A short story settles it.
+  And for these three puzzles it has to be a story: a list of its key words never worked. Compare Chat, where three models
+  got there from the key words alone, once in three tries.</p></aside>
+</section>
+
+<section aria-labelledby="part4">
+  <h2 id="part4">Part 4: Your turn, on Narrate and MindRouter</h2>
+  <p>So far the stories were given. In Narrate you write them, and you see the answer that the model doesn&rsquo;t.</p>
+  <h3>How Narrate works</h3>
+  <ol>
+    <li>You see every grid, including the one the model won&rsquo;t see.</li>
+    <li>You write a story about what happens. Don&rsquo;t spell out cells, numbers or coordinates.</li>
+    <li>The model gets the other grids and your story, and has to rebuild the hidden one exactly. The model is qwen3.8-27b, running on MindRouter.</li>
+    <li>You see whether it worked. Revise and try again.</li>
+  </ol>
+
+  <h3>The activity: write a different story (12 minutes)</h3>
+  <ol>
+    <li>Go to <a href="https://narc.insight.uidaho.edu/narrate">narc.insight.uidaho.edu/narrate</a> and enter the invite code <strong>AISYMP2026</strong> (valid through November 30, 2026).</li>
+    <li>Pick a puzzle. Chat is the quickest.</li>
+    <li>Write two to five sentences. A new setting is welcome: cooking, sports, your own field.</li>
+    <li>Submit. A test takes up to two minutes. If the page says the model is busy, wait a minute and try again.</li>
+    <li>Read the result, revise, and try again.</li>
+  </ol>
+  <p><strong>Challenge:</strong> Narrate&rsquo;s model failed The Accident with Jason&rsquo;s story. Can yours get it there?</p>
+  <aside class="callout"><p><span class="label">Research notice:</span> Narrate is a research study for adults 18 or older, and it&rsquo;s
+  voluntary. We don&rsquo;t ask for your name or email. Stories may be published without your name, so leave personal information out.</p></aside>
+  <p><strong>No laptop, or the site is down?</strong> Write your story on a card. Bert will read a few aloud and test them from the front.</p>
+
+  <h3>Backup: what a pilot showed with the Chat puzzle</h3>
+  <p>In an October 2026 pilot, six retellings of Chat were written with an AI assistant. All six describe the same events. Each was tried twice on three open models; the table shows one of them, gpt-oss-120b. The other two models solved all six.</p>
+  <table>
+    <caption>Six retellings of Chat and how one model did (gpt-oss-120b, two tries each)</caption>
+    <thead><tr><th scope="col">Setting</th><th scope="col">The retelling</th><th scope="col">Result</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Cooking</th><td>Two loaves of dough were rising on the counter. The first one sank when a cold draft came through the window. The second loaf, still warm, was pushed up against it, and the first puffed up higher than before. Then the second loaf rose too.</td><td>Solved, 2 of 2</td></tr>
+      <tr><th scope="row">Sailing</th><td>Two boats rode the same gentle swell. The first dipped into a trough. A wave rolling off the second boat&rsquo;s bow lifted it higher than before. Then the second boat rose on the wave too.</td><td>Not solved, 0 of 2</td></tr>
+      <tr><th scope="row">Fireflies</th><td>Two fireflies glowed softly side by side. The first one dimmed as the night cooled. Its neighbour flashed close beside it, and the first one brightened, glowing stronger than before. Seeing that, the neighbour brightened too.</td><td>Not solved, 0 of 2</td></tr>
+      <tr><th scope="row">Theater</th><td>Two actors waited calmly in the wings. The first one&rsquo;s nerves sank him into dread. His scene partner whispered a joke, and he walked on stage beaming, bolder than before. His confidence made his partner beam too.</td><td>Solved, 2 of 2</td></tr>
+      <tr><th scope="row">Gardening</th><td>Two sunflowers grew side by side. The first drooped during a dry spell. The second one&rsquo;s deep roots shared their water, and the first stood up taller than before. Then the second grew taller too.</td><td>Solved, 2 of 2</td></tr>
+      <tr><th scope="row">Astronomy</th><td>Two stars shone with equal light. The first faded behind a passing cloud of dust. Its companion&rsquo;s pull swept the dust away, and it blazed brighter than before. Then the companion flared up too.</td><td>Not solved, 0 of 2</td></tr>
+    </tbody>
+  </table>
+  <p>In the same pilot, changing only the last sentence of the original Chat story changed what the models drew:</p>
+  <table>
+    <caption>Same first three sentences, different last sentence</caption>
+    <thead><tr><th scope="col">Last sentence</th><th scope="col">Grid 4 as the models drew it</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">&ldquo;This made Bob happy too.&rdquo;</th><td>Both bars at full height. This is what happened in the puzzle.</td></tr>
+      <tr><th scope="row">&ldquo;Bob stayed just as he was.&rdquo;</th><td>Bob&rsquo;s bar stays at 2 cells. Two of the three models drew this both times.</td></tr>
+      <tr><th scope="row">&ldquo;Then Bob had to leave.&rdquo;</th><td>Bob&rsquo;s bar is gone. All three models drew this, every time.</td></tr>
+    </tbody>
+  </table>
+  <aside class="callout"><p><span class="label">The point:</span> you can&rsquo;t tell from reading a story whether it will work; you try it
+  and check. And a model follows the story it is given. Only someone who knows what happened can tell which story is true.</p></aside>
+</section>
+
+<section aria-labelledby="part5">
+  <h2 id="part5">Part 5: Stories about AI that leave us room to choose</h2>
+  <p>In Part 1, the story you tell about an unanswered email picked your next step. The stories we tell about AI do the same
+  thing for us. Some leave us something to decide. Some leave us nothing.</p>
+
+  <h3>A new AI tool arrives in your department</h3>
+  <table>
+    <caption>Three stories about the same news</caption>
+    <thead><tr><th scope="col">The story</th><th scope="col">What you expect next</th><th scope="col">What you do</th><th scope="col">Who decides</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">&ldquo;It&rsquo;s a wave.&rdquo;</th><td>It arrives whatever we do.</td><td>Adapt fast, or fall behind.</td><td>No one. It&rsquo;s weather.</td></tr>
+      <tr><th scope="row">&ldquo;It&rsquo;s an arms race.&rdquo;</th><td>Whoever slows down loses.</td><td>Adopt it everywhere, now.</td><td>Rivals, somewhere else.</td></tr>
+      <tr><th scope="row">&ldquo;It&rsquo;s a forklift.&rdquo;</th><td>It lifts whatever you point it at.</td><td>Decide what&rsquo;s worth lifting yourself.</td><td>You.</td></tr>
+    </tbody>
+  </table>
+  <aside class="callout"><p><span class="label">The point:</span> same news. The first two stories leave us nothing to decide. The third hands the decision back.</p></aside>
+
+  <h3>Two stories from the summer Faculty AI Bootcamp: the gym and the treadmill</h3>
+  <ul>
+    <li><strong>Nobody brings a forklift to the gym.</strong> The weight is the point. Some friction in our work is the reps,
+    the part that builds the skill: drafting your own argument, working a proof, sitting with a hard reading. Some is the
+    commute: formatting citations, converting files. Hand off the commute. Keep the reps. The line moves: grammar is commute
+    in a lab report and reps in a writing seminar.</li>
+    <li><strong>The productivity treadmill.</strong> AI saves an hour, and the hour fills with more output. We run faster and stay in the same place.</li>
+    <li><strong>Add a plate on purpose.</strong> Some frictions we choose: try it before you ask, have the AI quiz you instead of answer you, check one claim against the source.</li>
+  </ul>
+  <p>Both stories ask the same two questions. Which friction is the point? And where does the saved time go?</p>
+  <p>During the session the room votes by show of hands on which story fits their last month with AI: gym (it made me do the
+  reps), forklift (it lifted what I should have), commute (it took the dull parts), treadmill (saved time, filled it with
+  more), or barely used it.</p>
+
+  <h3>Where should AI go? Keep it human, use it with friction, or hand it off</h3>
+  <p>The room sorts eight tasks from faculty work into one of three choices. There&rsquo;s no answer key; the line moves with
+  the task and the person, which is why we draw it on purpose.</p>
+  <ol>
+    <li>Feedback on a student&rsquo;s draft</li>
+    <li>Formatting a reference list</li>
+    <li>The first draft of your own argument</li>
+    <li>A recommendation letter</li>
+    <li>Reading a manuscript you were asked to review</li>
+    <li>Transcribing a research interview</li>
+    <li>Practice quiz questions for your class</li>
+    <li>Replying to a hard email from a student</li>
+  </ol>
+
+  <h3>Stories that look ahead: it&rsquo;s 2031, and AI went well here. How? <span class="draft">(draft examples)</span></h3>
+  <p>Most stories about AI&rsquo;s future are things that happen to us. These four are stories where people chose. Each asks something of us now.</p>
+  <table>
+    <caption>Four stories about the future, and what each asks of us now</caption>
+    <thead><tr><th scope="col">The story</th><th scope="col">Looking back from 2031</th><th scope="col">What it asks of us now</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Our own tools</th><td>We ran our own AI and set its rules together, the way we run a library.</td><td>Show up when we decide what it&rsquo;s for.</td></tr>
+      <tr><th scope="row">The sparring partner</th><td>AI made students do more reps, not fewer. It argued back and quizzed them.</td><td>Set it up to question, not to answer.</td></tr>
+      <tr><th scope="row">Off the treadmill</th><td>The hours AI saved went to people: office hours, fieldwork, slow reading.</td><td>Decide where saved time goes before it&rsquo;s saved.</td></tr>
+      <tr><th scope="row">The second opinion</th><td>AI was never the first word or the last. People formed a view, then asked.</td><td>Think first, ask second, and make the call yourself.</td></tr>
+    </tbody>
+  </table>
+  <aside class="callout"><p><span class="label">A test for any story about AI&rsquo;s future:</span> does it say who decides,
+  what we keep doing ourselves, and where the saved time goes?</p></aside>
+
+  <h3>Table discussion (6 minutes)</h3>
+  <ol>
+    <li><strong>Who decides?</strong> Pick a story about AI you hear in your unit. Who acts in it? What does it leave you to decide?</li>
+    <li><strong>Keep, add friction, hand off.</strong> Name one task in your work for each. Where would you add a plate on purpose?</li>
+    <li><strong>Tell it from 2031.</strong> AI went well here. In two sentences, what did we choose?</li>
+  </ol>
+  <p>Each table then reports one line: its story from 2031, something it would keep human, and a friction it will choose.</p>
+</section>
+
+<section aria-labelledby="close">
+  <h2 id="close">To take with you, and links</h2>
+  <h3>Choosing the story is a judgment call</h3>
+  <ul>
+    <li><strong>Stories fill gaps.</strong> For people and for models, a story settles what the facts leave open.</li>
+    <li><strong>Many true stories, some work.</strong> You can&rsquo;t tell which by reading. You try it and check it against what you know.</li>
+    <li><strong>Tell stories that leave you choices.</strong> Ones that say who decides, which frictions we keep, and where the saved time goes.</li>
+  </ul>
+  <h3>Links</h3>
+  <ul>
+    <li>Narrate: <a href="https://narc.insight.uidaho.edu/narrate">narc.insight.uidaho.edu/narrate</a>, invite code AISYMP2026, valid through November 30, 2026.</li>
+    <li>NARC puzzles: <a href="https://narc.insight.uidaho.edu">narc.insight.uidaho.edu</a>. About 320 puzzles to solve, and a page to make your own.</li>
+    <li>MindRouter: <a href="https://mindrouter.uidaho.edu">mindrouter.uidaho.edu</a>. The university&rsquo;s own AI service.</li>
+    <li>The interactive slides: <a href="https://bertybaums.github.io/narratives-workshop/slides.html">bertybaums.github.io/narratives-workshop/slides.html</a>.</li>
+    <li>Questions: Bert Baumgaertner, <a href="mailto:bbaum@uidaho.edu">bbaum@uidaho.edu</a>.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>Companion prepared October 21, 2026, for the University of Idaho AI Symposium, October 29, 2026. Results are from
+  <a href="https://narc.insight.uidaho.edu/inspect">narc.insight.uidaho.edu/inspect</a> as of October 21, 2026.
+  Text licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Puzzles and stories by
+  their makers in the NARC lab, University of Idaho.</p>
+</footer>
+</body>
+</html>
