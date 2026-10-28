@@ -372,10 +372,20 @@
               <p class="slide-note" style="text-align:left !important; margin-left:0 !important;">Same events, same answer. One version names the colors; the other leaves the reader to work them out.</p>
             </div>
           </div>
+          <div class="narc-seq recap" aria-label="The whole sequence, with the hidden grid filled in">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,4,0,0,0],[0,0,0,4,0],[0,0,0,3,0],[4,3,0,0,4]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,0,0],[0,0,0,3,0],[0,3,0,0,4]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,0,0],[0,0,0,3,0],[0,3,0,0,2]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid is-answer" data-grid="[[0,0,0,3,0],[0,2,0,0,0],[0,0,0,4,0],[0,0,0,3,0],[4,3,0,0,2]]" aria-label="Grid 4 &middot; answer"></div><figcaption class="narc-panel-label">Grid 4 &middot; answer</figcaption></figure>
+          </div>
           <aside class="notes">
             [Hadley] Walk through the key: ducks are yellow, grass is green, blood is red. Hiding means the duck isn't visible. Emerging means it's visible again.
             Then toggle between the two stories. The simplified story names the colors. Your story doesn't, so the reader has to make the connection.
             Say which one you think is better for a person, and which one you'd expect to work better for a model.
+            The strip at the bottom is the whole sequence with grid 4 filled in, so point at it as you go through the key.
           </aside>
         </section>
 
@@ -481,10 +491,20 @@
               <p class="slide-note" style="text-align:left !important; margin-left:0 !important;">Neither version mentions the sun or the moon. The reader supplies them: night falls, and something moves across the sky, one step per frame.</p>
             </div>
           </div>
+          <div class="narc-seq recap" aria-label="The whole sequence, with the hidden grid filled in">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,8,8,8,4,4],[8,8,8,8,4,4],[8,8,8,8,8,8],[8,8,8,8,8,8],[8,2,8,8,8,8],[0,0,0,0,0,0]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[5,5,0,0,0,0],[5,5,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,2,0,0,0,0],[0,0,0,0,0,0]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,5,5,0,0],[0,0,5,5,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,2,0,3,0,0],[0,0,0,0,0,0]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid is-answer" data-grid="[[0,0,0,0,5,5],[0,0,0,0,5,5],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,2,0,0],[0,0,0,0,0,0]]" aria-label="Grid 4 &middot; answer"></div><figcaption class="narc-panel-label">Grid 4 &middot; answer</figcaption></figure>
+          </div>
           <aside class="notes">
             [Jason] Walk through the key: the sun is yellow, the sky goes from blue to black when night falls, the car is red, the tortoise is green, and the moon is gray.
             Then toggle between the two stories. The simplified one names the colors. Yours doesn't.
             One thing worth saying: neither story mentions the sun or the moon. "In the middle of the night" plus a gray square moving across the top is enough for a person. A model has to make that same leap.
+            The strip at the bottom is the whole sequence with grid 4 filled in, so point at it as you go through the key.
           </aside>
         </section>
 
@@ -513,7 +533,6 @@
         <section>
           <p class="slide-kicker">Part 3 &middot; Jason&rsquo;s puzzle</p>
           <h2>What Jason learned</h2>
-          <p class="draft-flag">Numbers changed to match the live table: Jason to confirm</p>
           <div class="slide-grid">
             <article class="slide-card"><h3>Easy for us still tells us a lot</h3><p>A puzzle that&rsquo;s easy for people can still tell us a lot about AI.</p></article>
             <article class="slide-card"><h3>A few simple pieces</h3><p>The Accident only takes the car, the tortoise and the event.</p></article>
@@ -523,7 +542,7 @@
           <p class="slide-callout">A bigger question: how does AI use stories to abstract and reason?</p>
           <aside class="notes">
             [Jason] These are your takeaways from your slides. Put them in your own words.
-            On the third card: your Google slide said 4 of 10 models with the story and 1 without. The live table today says 4 of 12 with both, and 0 of 12 from the grids alone or the story alone, so the slide uses those. Tell Bert if you meant a different count.
+            On the third card: the numbers are from the live table, 4 of 12 with both, and 0 of 12 from the grids alone or the story alone.
             The last card is the one to say slowly. AI is becoming an important technology that not many people feel they understand, and these puzzles are one way in that doesn't need any background.
             End on the bigger question: how AI uses stories to abstract and reason.
           </aside>
@@ -566,7 +585,6 @@
         <section>
           <p class="slide-kicker">Part 3 &middot; Chloe&rsquo;s puzzle</p>
           <h2>Reading Ballerina 4</h2>
-          <p class="draft-flag">Draft key: Chloe to confirm</p>
           <div class="slide-split" style="justify-content:center; gap:2.4rem;">
             <div class="slide-card" style="flex:0 0 22rem;">
               <div class="color-key">
@@ -580,10 +598,22 @@
               <p class="slide-callout" style="margin-top:0 !important;">To solve it you need both: the story, and tracking where every dancer stands from one frame to the next.</p>
             </div>
           </div>
+          <div class="narc-seq recap" aria-label="The whole sequence, with the hidden grid filled in">
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,0,0,0,8],[0,8,0,8,0],[0,0,8,0,0],[0,0,0,0,0],[2,0,0,0,0]]" aria-label="Grid 1"></div><figcaption class="narc-panel-label">Grid 1</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[0,0,8,0,0],[0,8,0,8,0],[8,0,0,0,8],[0,0,0,0,0],[2,0,0,0,0]]" aria-label="Grid 2"></div><figcaption class="narc-panel-label">Grid 2</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,0,0,0,8],[0,0,0,0,0],[8,0,0,0,8],[0,2,8,0,0],[0,0,0,0,0]]" aria-label="Grid 3"></div><figcaption class="narc-panel-label">Grid 3</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid is-answer" data-grid="[[0,0,0,0,0],[0,0,0,0,0],[0,0,2,0,0],[0,0,0,0,0],[8,8,8,8,8]]" aria-label="Grid 4 &middot; answer"></div><figcaption class="narc-panel-label">Grid 4 &middot; answer</figcaption></figure>
+            <span class="narc-arrow" aria-hidden="true">&rarr;</span>
+            <figure class="narc-panel"><div class="narc-grid" data-grid="[[8,8,8,8,8],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]" aria-label="Grid 5"></div><figcaption class="narc-panel-label">Grid 5</figcaption></figure>
+          </div>
           <aside class="notes">
-            [Chloe] Walk through the key. Check that this is how you meant it.
+            [Chloe] Walk through the key.
             The stage is seen from above, with the audience at the top. So the back of the stage is the bottom row.
             Solving it takes both understanding the story and keeping track of positions and formations from grid to grid.
+            The strip at the bottom is the whole sequence with grid 4 filled in, so point at it as you go through the key.
           </aside>
         </section>
 
