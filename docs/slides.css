@@ -262,6 +262,20 @@ body.slides-page { background: #ffffff; }
 .reveal .link-grid h3 { font-size: 1rem; margin: 0 0 0.25rem; }
 .reveal .link-grid p { font-size: 0.88rem; line-height: 1.35; }
 
+/* Closing slide: a QR code above each link card */
+.reveal .link-grid.qr-links { text-align: center; gap: 1rem; }
+.reveal .link-grid.qr-links img.qr-link {
+  display: block;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 0 auto 0.45rem;
+  padding: 0.4rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+}
+.reveal .link-grid.qr-links .qr-url { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.3rem; word-break: break-word; }
+
 /* --- Flip cards --- */
 .flip-grid {
   display: grid;

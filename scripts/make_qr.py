@@ -11,6 +11,7 @@ targets = {
     "docs/img/qr-deck.svg": deck,
     "docs/img/qr-narc.svg": "https://narc.insight.uidaho.edu",
     "docs/img/qr-narrate.svg": "https://narc.insight.uidaho.edu/narrate",
+    "docs/img/qr-mindrouter.svg": "https://mindrouter.uidaho.edu",
 }
 for path, url in targets.items():
     segno.make(url, error="m").save(path, scale=8, border=2, dark="#191919", light="#ffffff")
